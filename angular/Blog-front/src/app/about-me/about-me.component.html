@@ -1,0 +1,46 @@
+<div>
+  <div class="sidenav-content-header-container">
+    <h1>关于我</h1>
+  </div>
+  <div class="aboutMe">
+    <div>
+        <mat-card class="about-container mat-elevation-z6" *ngIf="consumer">
+            <mat-list>
+              <h3 mat-subheader>主人寄语</h3>
+              <mat-list-item>
+                <p>{{consumer['SelfIntroduction']}}</p>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                <a class="views-count" mat-line>
+                  <mat-icon class="mb-3" role="img">supervisor_account</mat-icon>
+                  {{consumer['Name']}}
+                </a>
+              </mat-list-item>
+              <mat-list-item>
+                <a class="views-count" mat-line>
+                  <mat-icon class="mb-3" role="img">email</mat-icon>
+                  {{consumer['Email']}}
+                </a>
+              </mat-list-item>
+              <mat-list-item>
+                <a class="views-count" mat-line>
+                  <mat-icon class="mb-3" role="img">location_on</mat-icon>
+                  {{consumer['Location']}}
+                </a>
+              </mat-list-item>
+              <mat-list-item>
+                <a class="views-count" mat-line>
+                  <mat-icon class="mb-3" role="img">check_circle</mat-icon>
+                  {{consumer['BlogLocation']}}
+                </a>
+              </mat-list-item>
+            </mat-list>
+          </mat-card>
+    </div>
+   <div>
+      <app-advertisements></app-advertisements>
+   </div>
+  </div>
+  
+</div>

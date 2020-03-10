@@ -1,0 +1,231 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Transactions;
+using blog.inputs;
+using blog.Models;
+using blog.Models.Article;
+using blog.Models.Classification;
+using blog.Models.Comment;
+using log4net;
+using Newtonsoft.Json;
+
+namespace blog.Services.Impl
+{
+    public class ArticleServiceImpl : IArticleService
+    {
+        private readonly ArticleContext _articleContext;
+
+        private readonly ClassificationContext _classificationContext;
+
+        private readonly CommentContext _commentContext;
+
+
+        private const string SHEMA = "bank_cookie";
+
+        private readonly ILog log = LogManager.GetLogger(Startup.Repository.Name, typeof(ArticleServiceImpl));
+
+        public ArticleServiceImpl(ArticleContext articleContext, ClassificationContext classificationContext
+                                   ,CommentContext commentContext)
+        {
+            _articleContext = articleContext;
+            _classificationContext = classificationContext;
+            _commentContext = commentContext;
+        }
+
+        /// <summary>
+        /// 添加一个新评论
+        /// </summary>
+        /// <param name="comment"></param>
+        public string AddComment(Comment comment)
+        {
+            //判断添加评论的文章是否存在
+            var check = _articleContext.Article.Where(a => a.Id == comment.ArticleId).FirstOrDefault();
+            if (check == null)
+            {
+                return "添加评论的文章不存在";
+            }
+            _commentContext.Comment.Add(comment);
+            if (_commentContext.SaveChanges() == 1)
+            {
+                return "评论添加成功";
+            }
+            return "评论添加失败";
+        }
+
+        /*
+        public string AddCommentReply(AddCommentReply addCommentReply)
+        {
+            int repliedId = addCommentReply.RepliedId;
+            int articleId = addCommentReply.ArticleId;
+            string commentName = addCommentReply.CommentName;
+            string mailBox = addCommentReply.MailBox;
+            string content = addCommentReply.Content;
+            bool firstComment = addCommentReply.FirstComment;
+            DateTime createTime = addCommentReply.CreateTime;
+
+            //判断回复的评论是否存在
+            var check = _commentContext.Comment.Where(c => c.Id == repliedId).FirstOrDefault();
+            if (check == null)
+            {
+                return "回复的评论不存在";
+            }
+                //1.添加回复评论
+                Comment comment = new Comment
+                {
+                    ArticleId = articleId,
+                    CommentName = commentName,
+                    MailBox = mailBox,
+                    Content = content,
+                    FirstComment = firstComment,
+                    CreateTime = createTime
+                };
+                //暂时未做事务处理
+                _commentContext.Comment.Add(comment);
+                if (_commentContext.SaveChanges() == 1)
+                {
+                    //获得添加的主键 
+                    int replyId = comment.Id;
+                    Reply reply = new Reply
+                    {
+                        ReplyId = replyId,
+                        RepliedId = repliedId
+                    };
+                    _replyContext.Reply.Add(reply);
+                    if (_replyContext.SaveChanges() == 1)
+                    {
+                        return "回复的评论添加成功";
+                    }
+                }
+            return "回复的评论添加失败";
+        }
+        */
+
+        public AboutMe GetAboutMe()
+        {
+            AboutMe aboutMe = new AboutMe
+            {
+                BlogerName = "Cookie",
+                Address = "四川省成都市",
+                IndividualResume = "每天都要加油鸭！",
+                Email = "935046315@qq.com"
+            };
+            return aboutMe;
+        }
+
+        /// <summary>
+        /// 通过阅读量显示文章列表 
+        /// </summary>
+        /// <returns></returns>
+        public string GetAllArticlesByReadCounts(int userId)
+        {
+            List<Article> articles = _articleContext.Article.Where(art => art.UserId == userId).OrderByDescending(a => a.BrowseNumber).ToList();
+            if (articles != null)
+            {
+                string json = JsonConvert.SerializeObject(articles);
+                return json;
+            }
+            return "文章列表为空";
+        }
+
+        /// <summary>
+        /// 通过更新时间显示文章列表 
+        /// </summary>
+        /// <returns></returns>
+        public string GetAllArticlesByUpdateTime(int userId)
+        {
+            List<Article> articles = _articleContext.Article.Where(art => art.UserId == userId).OrderByDescending(a => a.InDate).ToList();
+            if (articles != null)
+            {
+                string json = JsonConvert.SerializeObject(articles);
+                return json;
+            }
+            return "文章列表为空";
+        }
+
+        /// <summary>
+        /// 获得所有分类与分类包含的文章数量
+        /// </summary>
+        /// <returns></returns>
+        public string GetAllClassification(int userId)
+        {
+            List<Dictionary<string, object>> keyValuePairs = new List<Dictionary<string, object>>();
+            List<Classification> classifications = _classificationContext.Classification.Where(c => c.UserId == userId).ToList();
+            if (classifications != null && classifications.Count() != 0)
+            {
+                foreach (Classification classification in classifications)
+                {
+                    int articleCounts = _articleContext.Article.Where(a => a.ClassificationId == classification.Id).Count();
+                    Dictionary<string, object> record = new Dictionary<string, object>();
+                    record.Add("classificationName", classification.ClassificationName);
+                    record.Add("articleCounts", articleCounts);
+                    record.Add("classificationId", classification.Id);
+                    keyValuePairs.Add(record);
+                }
+                string json = JsonConvert.SerializeObject(keyValuePairs);
+                return json;
+            }
+            return "不存在任何分类";
+        }
+
+        public string GetAllCommentsByArticleId(int articleId)
+        {
+            List<Dictionary<string, object>> record = new List<Dictionary<string, object>>();
+            List<Comment> comments = _commentContext.Comment.Where(c => c.ArticleId == articleId).ToList();
+            if (comments != null && comments.Count != 0) 
+            {
+                foreach (Comment comment in comments)
+                {
+                    Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
+                    keyValuePairs.Add("commentName", comment.CommentName);
+                    keyValuePairs.Add("content", comment.Content);
+                    record.Add(keyValuePairs);
+                }
+                string json = JsonConvert.SerializeObject(record);
+                return json;
+            }
+            return "该文章不存在评论";
+            
+        }
+
+        public string GetArticleById(int articleId)
+        {
+            //添加浏览量
+            var article = _articleContext.Article.Where(a => a.Id == articleId).FirstOrDefault();
+            if (article != null)
+            {
+                article.BrowseNumber += 1;
+                if (_articleContext.SaveChanges() == 1)
+                {
+                    article.InDate = article.InDate.Date;
+                    string json = JsonConvert.SerializeObject(article);
+                    return json;
+                }
+                return "获取文章失败";
+            }
+            return "获取文章不存在";
+        }
+
+        public string GetLatestArticle()
+        {
+            Article article = _articleContext.Article.OrderByDescending(a => a.InDate).FirstOrDefault();
+            if (article != null)
+            {
+                string json = JsonConvert.SerializeObject(article);
+                return json;
+            }
+            return "不存在最新文章";
+        }
+
+        public Dictionary<string, object> GetPersonalData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Dictionary<string, object>> GetPigeonhole()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

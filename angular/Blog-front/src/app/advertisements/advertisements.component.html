@@ -1,0 +1,13 @@
+<div>
+    <ul class="ul-cotainer" *ngFor="let item of allAdvertisements">
+        <mat-card _ngcontent-c13="" class="advertisements_container mat-elevation-z6">
+            <div class="advertisement">
+                <div class="advertisement-detail">
+                    <p class="advertisement-name">{{item['Title']}}</p>
+                    <p style="margin: 5px;font-size: 5%">由{{item['Advertiser']}}倾情提供</p>
+                </div>
+                <p>{{item['Content']}}</p>
+            </div>
+        </mat-card>
+    </ul>
+</div>

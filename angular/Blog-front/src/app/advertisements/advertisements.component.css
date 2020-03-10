@@ -1,0 +1,32 @@
+.advertisements_container {
+    margin-right: 0px;
+    margin-right: 18px;
+    vertical-align: top;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+  .ul-cotainer{
+      padding-left: 20px;
+  }
+  .advertisement-name{
+    float:left;
+    width:20em;
+    font-size:200%;
+    font-family:algerian,courier;
+    line-height:80%;
+  }
+
+  .advertisement{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  p{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .advertisement-detail{
+      display: flex;
+      justify-content: space-between;
+  }

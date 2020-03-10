@@ -1,0 +1,56 @@
+<div *ngIf="this.loginService.userId; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+<div class="sidenav-content-header-container">
+    <h1>评论管理</h1>
+</div>
+
+<div style="display: flex;">
+        <app-left-admin></app-left-admin>
+    <div style="width: 99%;padding-left: 1%;">
+        <div _ngcontent-c13="" class="sort_container mat-elevation-z6" style="margin: 10px;">
+            <a routerLink="/admin" style="text-decoration: none;"><span style="padding: 10px;">文章</span></a>
+            <a routerLink="/classification" style="text-decoration: none;"><span style="padding: 10px;">分类</span></a>
+            <a routerLink="/advertisementAdmin" style="text-decoration: none;"><span style="padding: 10px;">广告</span></a>
+            <a routerLink="/commentAdmin" style="text-decoration: none;"><span style="padding: 10px;">评论</span></a>
+            <a routerLink="/personalMessage" style="text-decoration: none;"><span style="padding: 10px;">个人信息</span></a>
+        </div>
+        <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6" style="margin: 10px;">
+            <div style="display: flex;justify-content:space-between;">
+                <div>
+                    <span style="margin-bottom: 0px"><b>评论(仅剩下{{commentCounts}}条评论，请认真对待每位小伙伴的评论)</b></span>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+            <div style="display: flex;padding-top: 10px;">
+                <div>
+                    <ul style="padding-left: 0px;" *ngFor="let item of comments">
+                         <p style="margin-top: 0px;margin-bottom: 0px;">给:{{item["articleName"]}}</p>
+                          <p style="width:450px;margin-top: 0px;margin-bottom: 0px;"
+                            *ngIf="item['content'] else elseBlock"><b>说:{{item['content']}}</b></p>
+                        <ng-template #elseBlock><b>竟然是空回复！</b></ng-template>
+                        <mat-divider></mat-divider>
+                        <!-- <span [articleId]="item['articleId']">{{articleId}}</span> -->
+                    </ul>
+                </div>
+                <div>
+                    <ul *ngFor="let item of comments">
+                        <p style="margin-top: 0px;margin-bottom: 0px;padding-bottom:21px;width:510px">
+                            <span style="color:#a9a9a9 ">作者:</span>{{item["commentName"]}}</p>
+                        <!-- <span [articleId]="item['articleId']">{{articleId}}</span> -->
+                    </ul>
+                </div>
+                <div>
+                    <ul *ngFor="let item of comments;" style="padding-left: 90px">
+                        <p style="margin-top: 0px;margin-bottom: 0px;padding-bottom:21px;">
+                            <a routerLink="/commentAdmin"  style="text-decoration: none;" (click)="deleteComment(item)">删除</a>
+                        </p>
+                    </ul>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    </div>
+</ng-template>
+<ng-template #elseBlock>
+    <app-article-list></app-article-list>
+</ng-template>

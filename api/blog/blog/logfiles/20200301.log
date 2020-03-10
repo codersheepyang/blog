@@ -1,0 +1,14 @@
+2020-03-01 13:13:28,567 [12] INFO  blog.Controllers.AboutMeController [(null)] - username=Cookie,password=123456
+2020-03-01 13:13:28,685 [12] INFO  blog.Services.Impl.LoginServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-01 13:14:11,959 [36] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为Java
+2020-03-01 13:15:38,623 [43] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:我的第一篇java博客,添加的用户是:Cookie,添加的分类Id为:1
+2020-03-01 13:23:16,030 [70] INFO  blog.Controllers.AboutMeController [(null)] - username=Cookie,password=123456
+2020-03-01 13:23:16,031 [70] INFO  blog.Services.Impl.LoginServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-01 13:26:55,873 [83] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:MarkDown,添加的用户是:Coookie,添加的分类Id为:1
+2020-03-01 13:28:50,820 [126] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为Test
+2020-03-01 13:29:27,877 [51] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:Test,添加的用户是:Cookie,添加的分类Id为:2
+2020-03-01 13:30:47,438 [139] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为生活
+2020-03-01 13:31:32,660 [167] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:今天是星期天,添加的用户是:Cookie,添加的分类Id为:3
+2020-03-01 15:10:10,017 [81] INFO  blog.Controllers.AboutMeController [(null)] - username=Cookie,password=123456
+2020-03-01 15:10:10,019 [81] INFO  blog.Services.Impl.LoginServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-01 15:10:41,008 [69] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为成都

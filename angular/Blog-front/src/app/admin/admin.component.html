@@ -1,0 +1,17 @@
+<div *ngIf="this.loginService.userId; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <div class="sidenav-content-header-container">
+        <h1>文章管理</h1>
+      </div>
+      <div style="display: flex;">
+        <app-left-admin></app-left-admin>
+        
+        <div style="width: 100%">
+            <app-right-admin></app-right-admin>
+        </div>
+    </div>
+</ng-template>
+<ng-template #elseBlock>
+  <app-article-list></app-article-list>
+</ng-template>
+

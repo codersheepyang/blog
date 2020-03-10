@@ -1,0 +1,47 @@
+<div style="width: 600px;">
+    <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6" style="margin: 10px">
+        <p>评论</p>
+        <div style="display: flex;">
+            <div>
+                <div>
+                    <mat-form-field>
+                        <input [(ngModel)]="email" matInput placeholder="邮箱" />
+                        <mat-hint>欢迎留下邮箱交流哟~</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input [(ngModel)]="name" matInput placeholder="名字" />
+                        <mat-hint>你同样可以选择匿名直接评论！</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div>
+                <div style="padding-left: 50px">
+                    <mat-form-field>
+                        <input [(ngModel)]="content" matInput placeholder="最多评论20字 - - " />
+                        <mat-hint>请在这里输入回复信息</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div style="padding-left: 50px;padding-top: 20px">
+                    <button routerLink="/article/{{commentId}}" (click)="addContent()" mat-button style="background:lightgray;padding-left: 5px">
+                        回复
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <mat-divider></mat-divider>
+            <p style="padding-top: 10px">
+                <b>{{ commentCounts }}</b>条评论
+            </p>
+            <div *ngIf="comments">
+                <div *ngFor="let item of comments">
+                    <p>
+                        <b>{{ item["commentName"] }}</b>说:{{ item["content"] }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

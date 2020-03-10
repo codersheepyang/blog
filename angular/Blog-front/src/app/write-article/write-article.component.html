@@ -1,0 +1,41 @@
+<div class="sidenav-content-header-container">
+    <h1>文章添加</h1>
+</div>
+<div style="display: flex;">
+    <div>
+        <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6"
+            style="width:180px;position: relative;top: 10px;left: 10px;">
+            <p>
+                <mat-icon> highlight</mat-icon>小提示
+            </p>
+            <p><b>认真用心写好每一篇文章~</b></p>
+        </mat-card>
+    </div>
+    <div style="width: 82.5%;padding-left: 1%;">
+        <div>
+            <mat-card style="margin: 10px;width: 1158px">
+                <mat-form-field>
+                    <input [(ngModel)]="createUser"  matInput placeholder="创建者">
+                </mat-form-field>
+                <mat-form-field style="padding-left: 20px">
+                    <input [(ngModel)]="title" matInput placeholder="标题" />
+                </mat-form-field>
+                <mat-form-field style="padding-left: 20px">
+                    <mat-select placeholder="{{placeHolder}}" (selectionChange)="selected($event)" formControName="Id" >
+                        <mat-option *ngFor="let item of classifications" [value]="item['Id']"  >
+                            {{ item['ClassificationName']}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                        <button (click)="addOrUpdateArticle()" mat-button style="background:lightgray;padding-left: 10px;margin-left: 20px">
+                            {{addOrUpdate}}
+                        </button>
+                    <p style="color:red" *ngIf="remind"><b>提醒:{{remind}}</b></p>
+            </mat-card>
+        </div>
+        <!-- [classificationId]="item['Id']" -->
+
+        <div id="md" style="margin: 10px;" appEditorMd [editormdConfig]="conf" (onEditorChange)="syncModel($event)">
+            <textarea style="display: block;" [(ngModel)]="content"></textarea>
+        </div>
+    </div>
+</div>

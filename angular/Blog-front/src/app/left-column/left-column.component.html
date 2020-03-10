@@ -1,0 +1,58 @@
+<div>
+    <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6"
+        style="width:180px;position: relative;top: 10px;left: 10px;">
+        <p><b>个人资料</b></p>
+        <p style="font-size:15px">读万卷书，行万里路</p>
+        <!-- <p style="font-size:12px;margin-bottom: 5px"> -->
+        <p style="padding-right: 5%;font-size:15px;"><b>总文章:{{articleCounts}}</b></p>
+        <p style="padding-right: 5%;font-size:15px;"><b>总评论:{{commentCounts}}</b></p>
+        <p style="padding-right: 5%;font-size:15px;"><b>总浏览:{{browseNumber}}</b></p>
+        <!-- </p> -->
+        <!-- <p style="font-size:12px;margin-top:5px">
+            <span style="padding-right: 25%;"></span>
+            <span style="padding-right: 20%;"></span>
+            <span style="padding-right: 20px;"></span>
+        </p> -->
+    </mat-card>
+
+    <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6"
+        style="width:180px;position: relative;top:20px;left: 10px;">
+        <p><b>个人分类</b></p>
+        <ul *ngFor="let item of allClassification" style="padding-left: 0px;">
+            <li>
+                <a style="text-decoration: none;color: black">
+                    {{item['classificationName']}}
+                    <span style="float:right;">{{item['articleCounts']}}</span>
+                </a>
+            </li>
+        </ul>
+    </mat-card>
+
+    <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6"
+        style="width:180px;position: relative;top:30px;left: 10px;">
+        <p><b>阅读排行</b></p>
+        <ul *ngFor="let item of hotArticles" style="padding-left: 0px;">
+            <li>
+                <a routerLink="/article/{{item['Id']}}" style="text-decoration: none;color: black">
+                    {{item['ArticleName']}}
+                    <span style="float:right;">{{item['BrowseNumber']}}</span>
+                </a>
+
+            </li>
+        </ul>
+    </mat-card>
+
+    <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6"
+        style="width:180px;position: relative;top:40px;left: 10px;">
+        <p><b>更新时间</b></p>
+        <ul *ngFor="let item of updateTime" style="padding-left: 0px;">
+            <li>
+                <a routerLink="/article/{{item['Id']}}" style="text-decoration: none;color: black">
+                    {{item['ArticleName']}}
+                </a>
+
+            </li>
+        </ul>
+    </mat-card>
+
+</div>

@@ -1,0 +1,12 @@
+<div style="width: 200px;">
+  <mat-card
+    _ngcontent-c13=""
+    class="sort_container mat-elevation-z6"
+    style="margin: 10px"
+  >
+    <p><b>热文推荐</b> <mat-icon>mood</mat-icon></p>
+    <p *ngFor="let item of hotArticle">
+        <a  routerLink="/article/{{item['Id']}}"  style="text-decoration: none;color: black">{{item['ArticleName']}}</a>
+    </p>
+  </mat-card>
+</div>

@@ -1,0 +1,37 @@
+﻿2020-02-21 13:51:31,574 [14] INFO  blog.Controllers.LoginController [(null)] - username=Cookie,password=123456
+2020-02-21 13:51:31,630 [14] INFO  blog.Services.Impl.LoginServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-02-21 14:03:08,686 [33] INFO  blog.Controllers.LoginController [(null)] - username=Cookie,password=123456
+2020-02-21 14:03:08,687 [33] INFO  blog.Services.Impl.LoginServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-02-21 14:04:45,283 [47] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:今天又开始要整理之前的博客网站了,添加的用户是:Cookie,添加的分类Id为:45
+2020-02-21 14:13:00,091 [88] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:58
+2020-02-21 14:13:00,166 [84] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:45
+2020-02-21 14:13:08,856 [84] INFO  blog.Controllers.ManagementController [(null)] - 今天又开始要整理之前的博客网站了###文章内容
+HAVE A NICE DAY ! 
+HOT TEMPRATURE TO ME IS NOT SECURITY!4558
+2020-02-21 14:13:50,663 [81] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:52
+2020-02-21 14:13:50,705 [91] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:47
+2020-02-21 14:15:43,631 [82] INFO  blog.Controllers.ManagementController [(null)] - 博客搭建完成### 博客终于搭建完成啦，好开心\(^o^)/~
+##### &emsp;&emsp;这个博客样子做的还算满意，就是后台代码写的太差了！后期想拿来当自己博客还有好好改改，要不然后面真的很难维护，还有加内容。如果不做小小的重构的话，只会让这个博客越来越庞大，冗余越来越多！先不说这么多，开心就完事 ~~
+![avatar][https://t8.baidu.com/it/u=1484500186,1503043093&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1582870507&t=893aebfe5a839e1a9a3493bf941b6f03]
+### 试试写段Java代码:
+``Java
+public void Class{
+	public static void main(string[] args){
+	System.out.printf("Hello,World!");
+	}
+} 
+``
+4752
+2020-02-21 14:17:01,364 [87] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:52
+2020-02-21 14:17:01,420 [77] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:47
+2020-02-21 14:19:05,706 [73] INFO  blog.Controllers.ManagementController [(null)] - 博客搭建完成### 博客终于搭建完成啦，好开心\(^o^)/~
+##### &emsp;&emsp;这个博客样子做的还算满意，就是后台代码写的太差了！后期想拿来当自己博客还有好好改改，要不然后面真的很难维护，还有加内容。如果不做小小的重构的话，只会让这个博客越来越庞大，冗余越来越多！先不说这么多，开心就完事 ~~
+### 试试写段Java代码:
+``Java
+public void Class{
+	public static void main(string[] args){
+	System.out.printf("Hello,World!");
+	}
+} 
+``
+4752

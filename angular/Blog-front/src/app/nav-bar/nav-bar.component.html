@@ -1,0 +1,51 @@
+<nav class="app-navbar-header">
+  <a mat-button [routerLink]="['']">
+    <img class="app-navbar-avator" src="{{head}}">
+  </a>
+
+  <a class="app-navbar-link-small-hide" style="text-decoration: none;" [routerLink]="['/articleList']" mat-button>
+    {{title}}
+  </a>
+
+  <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;"
+    [routerLink]="['/articleList']" mat-button>
+    文章列表
+  </a>
+  <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;" [routerLink]="['/photo']"
+    mat-button>
+    照片
+  </a>
+
+
+  <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;" [routerLink]="['/aboutMe']"
+    mat-button>
+    关于我
+  </a>
+  <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;" [routerLink]="['/admin']"
+  mat-button>
+  <div *ngIf="this.loginService.userId; then thenThis"></div>
+  <ng-template #thenThis>管理</ng-template>
+</a>
+
+  <a class="app-navbar-link-small-hide" style="padding-left: 750px;text-decoration: none;"
+  mat-button>
+  登录状态：
+  <div *ngIf="this.loginService.userId; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>已登录</ng-template>
+  <ng-template #elseBlock><a routerLink='/login' style="text-decoration: none;">点击登录</a></ng-template>
+</a>
+
+  <div class="flex-spacer"></div>
+
+</nav>
+<nav class="app-navbar-link app-navbar-link-small">
+  <a [routerLink]="['/articleList']" mat-button>
+    文章列表
+  </a>
+  <a [routerLink]="['/admin']" mat-button>
+    管理
+  </a>
+  <a [routerLink]="['/aboutMe']" mat-button>
+    关于我
+  </a>
+</nav>

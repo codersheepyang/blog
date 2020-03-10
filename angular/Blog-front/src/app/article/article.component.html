@@ -1,0 +1,22 @@
+<div class="sidenav-content-header-container">
+        <h1>文章详读</h1>
+</div>
+<div style="display: flex;justify-content: space-between;">
+    <app-left-column></app-left-column>
+    <div style="width: 99%;padding-left: 10px">
+        <mat-card  _ngcontent-c13="" class="sort_container mat-elevation-z6"  style="margin: 10px">
+            <h1>{{article['ArticleName']}}</h1>
+            <p style="font-size: 15px;color:#a9a9a9">
+                <span style="padding-right: 20px">浏览量:{{article['BrowseNumber']}}</span>
+                <!-- <span style="padding-right: 20px">分类:{{classification['ClassificationName']}}</span> -->
+            </p>
+            <div class="detailmarkdown" id="detailmarkdown" style="width: 99%;padding-right:0px">
+                <textarea style="display: none;"></textarea>
+            </div>
+        </mat-card>
+        <div style="display: flex;">
+            <app-comment [commentId]="article['Id']"></app-comment>
+            <app-hot-articles></app-hot-articles>
+        </div>
+    </div>
+</div>
