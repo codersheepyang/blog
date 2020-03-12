@@ -378,11 +378,11 @@ namespace blog.Services.Impl
             User originalUser = _userContext.User.Where(u => u.ID == user.ID).FirstOrDefault();
             if (originalUser != null)
             {
-                originalUser.SelfIntroduction = user.SelfIntroduction;
-                originalUser.Email = user.Email;
-                originalUser.Name = user.Name;
-                originalUser.Location = user.Location;
-                originalUser.Company = user.Company;
+                originalUser.SelfIntroduction = user.SelfIntroduction ?? originalUser.SelfIntroduction;
+                originalUser.Email = user.Email ?? originalUser.Email;
+                originalUser.Name = user.Name ?? originalUser.Name;
+                originalUser.Location = user.Location ?? originalUser.Location;
+                originalUser.Company = user.Company ?? originalUser.Company;
                 if (_userContext.SaveChanges() == 1)
                 {
                     return 1;
@@ -390,6 +390,18 @@ namespace blog.Services.Impl
                 return -1;
             }
             return -1;
+        }
+
+        public string GetPersonalMessage(int userId)
+        {
+            User user = _userContext.User.Where(u => u.ID == userId).FirstOrDefault();
+            if (user != null && (user.Email != null || user.SelfIntroduction != null || user.Location != null
+                    || user.Name != null || user.Company != null))
+            {
+                string json = JsonConvert.SerializeObject(user);
+                return json;
+            }
+            return null;
         }
     }
 }

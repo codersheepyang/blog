@@ -191,10 +191,12 @@ namespace blog.Controllers
             return Ok(_managementService.AddPersonalMessage(user));
         }
 
+        
         [HttpGet("personalMessage/{userId}")]
         public ActionResult<string> GetPersonalMessage(int userId)
         {
-
+           return Ok(_managementService.GetPersonalMessage(userId));
         }
+        
     }
 }

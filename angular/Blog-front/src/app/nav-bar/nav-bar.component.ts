@@ -7,7 +7,7 @@ import {LoginService} from '../services/blog.service';
 })
 export class NavBarComponent implements OnInit {
   title = '博客';
-  head = 'http://blog.yangk.cc/images/head.png';
+  head = '../../assets/img/head.png';
   status = "未登录";
   constructor(private loginService : LoginService) { 
   }

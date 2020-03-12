@@ -10,8 +10,15 @@ export class RightAdminComponent implements OnInit {
   constructor(private loginService : LoginService) { }
 
   ngOnInit() {
-    this.loginService.getAllArticleMessage(this.loginService.userId).subscribe(value => {this.allArticleMessage = value;});
-    console.log(this.allArticleMessage);
+    this.getAllArticles();
+  }
+
+  getAllArticles()
+  {
+    this.loginService.getAllArticleMessage(this.loginService.userId).subscribe(value => {
+      this.allArticleMessage = value;
+      console.log("value",value);
+    });
   }
 
   deleteArticle(article:any){

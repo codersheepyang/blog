@@ -54,3 +54,17 @@ C:\Users\YangK\Desktop\Cookie.K.Yang\api\blog\blog\bin\Debug\netcoreapp2.1\blog.
 C:\Users\YangK\Desktop\Cookie.K.Yang\api\blog\blog\bin\Debug\netcoreapp2.1\blog.dll
 C:\Users\YangK\Desktop\Cookie.K.Yang\api\blog\blog\bin\Debug\netcoreapp2.1\blog.pdb
 C:\Users\YangK\Desktop\Cookie.K.Yang\api\blog\blog\obj\Debug\netcoreapp2.1\blog.RazorTargetAssemblyInfo.cache
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.csprojAssemblyReference.cache
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.csproj.CoreCompileInputs.cache
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.RazorAssemblyInfo.cache
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.RazorAssemblyInfo.cs
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.AssemblyInfoInputs.cache
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.AssemblyInfo.cs
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.dll
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.pdb
+C:\Users\cy76\Desktop\blog\api\blog\blog\bin\Debug\netcoreapp2.1\blog.deps.json
+C:\Users\cy76\Desktop\blog\api\blog\blog\bin\Debug\netcoreapp2.1\blog.runtimeconfig.json
+C:\Users\cy76\Desktop\blog\api\blog\blog\bin\Debug\netcoreapp2.1\blog.runtimeconfig.dev.json
+C:\Users\cy76\Desktop\blog\api\blog\blog\bin\Debug\netcoreapp2.1\blog.dll
+C:\Users\cy76\Desktop\blog\api\blog\blog\bin\Debug\netcoreapp2.1\blog.pdb
+C:\Users\cy76\Desktop\blog\api\blog\blog\obj\Debug\netcoreapp2.1\blog.RazorTargetAssemblyInfo.cache

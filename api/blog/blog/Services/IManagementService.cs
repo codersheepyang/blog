@@ -41,5 +41,7 @@ namespace blog.Services
 
         int AddPersonalMessage(User user);
 
+        string GetPersonalMessage(int userId);
+
     }
 }

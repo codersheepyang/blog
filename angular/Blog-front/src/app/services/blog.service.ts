@@ -47,6 +47,14 @@ export class LoginService {
   
   constructor(private http: HttpClient) { }
 
+  getPersonalMessage(userId:Number):Observable<any>{
+    const url = `${this.personalMessageUrl}/${userId}`;
+    return this.http.get<any>(url);
+  }
+  getAllArticleMessage(userId:Number): Observable<any> {
+    const url = `${this.allArticleMessageUrl}/${userId}`;
+    return this.http.get<any>(url);
+  }
   getArticleByUpdateTime(userId:Number):Observable<any>{
     const url = `${this.articlesByUpdateTimeUrl}/${userId}`;
     return this.http.get(url);
@@ -125,10 +133,7 @@ export class LoginService {
     return this.http.get<any>(url);
   }
 
-  getAllArticleMessage(userId:Number): Observable<any> {
-    const url = `${this.allArticleMessageUrl}/${userId}`;
-    return this.http.get<any>(url);
-  }
+ 
 
   addComment(comment: Comment): Observable<any> {
     return this.http.post<any>(this.commentUrl, comment, { headers });
