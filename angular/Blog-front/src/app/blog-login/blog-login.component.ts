@@ -15,6 +15,7 @@ export class BlogLoginComponent implements OnInit {
   login : User;
   user : any;
   message : string = "Welcome back";
+  articleId = null;
   constructor(private loginService : LoginService,private router : Router) { }
 
   ngOnInit() {
@@ -36,8 +37,14 @@ export class BlogLoginComponent implements OnInit {
           this.loginService.userId = Number.parseInt(value); 
           this.user = value;
           this.loginService.userId = value;
-          this.router.navigateByUrl("/articleList");
-          return;
+          if(this.loginService.articleId == undefined)
+          {
+            this.router.navigateByUrl("/articleList");
+            return;
+          }
+          this.articleId = this.loginService.articleId;
+          this.loginService.articleId = undefined;
+          this.router.navigateByUrl(`/article/${this.articleId}`);
         }
         this.message = "账号或密码错误";
     });

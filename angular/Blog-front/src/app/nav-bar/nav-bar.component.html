@@ -3,31 +3,34 @@
     <img class="app-navbar-avator" src="{{head}}">
   </a>
 
-  <a class="app-navbar-link-small-hide" style="text-decoration: none;" [routerLink]="['/articleList']" mat-button>
+  <a class="app-navbar-link-small-hide" style="text-decoration: none;" [routerLink]="['/homepage']" mat-button>
     {{title}}
   </a>
 
   <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;"
     [routerLink]="['/articleList']" mat-button>
-    文章列表
+    我的博客
   </a>
+  <!--
   <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;" [routerLink]="['/photo']"
     mat-button>
     照片
   </a>
+-->
 
 
-  <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;" [routerLink]="['/aboutMe']"
-    mat-button>
-    关于我
-  </a>
   <a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;" [routerLink]="['/admin']"
   mat-button>
   <div *ngIf="this.loginService.userId; then thenThis"></div>
   <ng-template #thenThis>管理</ng-template>
 </a>
+<a class="app-navbar-link-small-hide" style="padding-left: 20px;text-decoration: none;" [routerLink]="['/aboutMe']"
+mat-button>
+<div *ngIf="this.loginService.userId; then thenShow"></div>
+<ng-template #thenShow>关于我</ng-template>
+</a>
 
-  <a class="app-navbar-link-small-hide" style="padding-left: 750px;text-decoration: none;"
+  <a class="app-navbar-link-small-hide" style="padding-left: 800px;text-decoration: none;"
   mat-button>
   登录状态：
   <div *ngIf="this.loginService.userId; then thenBlock else elseBlock"></div>

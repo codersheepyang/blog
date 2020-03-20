@@ -8,6 +8,8 @@ using blog.Models;
 using blog.Models.Article;
 using blog.Models.Classification;
 using blog.Models.Comment;
+using blog.Models.Consumer;
+using blog.Models.Tag;
 using log4net;
 using Newtonsoft.Json;
 
@@ -17,9 +19,13 @@ namespace blog.Services.Impl
     {
         private readonly ArticleContext _articleContext;
 
+        private readonly UserContext _userContext;
+
         private readonly ClassificationContext _classificationContext;
 
         private readonly CommentContext _commentContext;
+
+        private readonly TagContext _tagContext;
 
 
         private const string SHEMA = "bank_cookie";
@@ -27,11 +33,14 @@ namespace blog.Services.Impl
         private readonly ILog log = LogManager.GetLogger(Startup.Repository.Name, typeof(ArticleServiceImpl));
 
         public ArticleServiceImpl(ArticleContext articleContext, ClassificationContext classificationContext
-                                   ,CommentContext commentContext)
+                                   ,CommentContext commentContext,TagContext tagContext
+                                   ,UserContext userContext)
         {
             _articleContext = articleContext;
             _classificationContext = classificationContext;
             _commentContext = commentContext;
+            _tagContext = tagContext;
+            _userContext = userContext;
         }
 
         /// <summary>
@@ -46,6 +55,13 @@ namespace blog.Services.Impl
             {
                 return "添加评论的文章不存在";
             }
+            int userId = _articleContext.Article.Find(comment.ArticleId).UserId;
+            string name = _userContext.User.Find(userId).Name;
+            if (name == null)
+            {
+                comment.CommentName = "Anonymous";
+            }
+            comment.CommentName = name;
             _commentContext.Comment.Add(comment);
             if (_commentContext.SaveChanges() == 1)
             {
@@ -226,6 +242,58 @@ namespace blog.Services.Impl
         public List<Dictionary<string, object>> GetPigeonhole()
         {
             throw new NotImplementedException();
+        }
+
+        public string GetAllClassfications()
+        {
+            List<Classification> lists =  _classificationContext.Classification.Take(20).ToList();
+            if (lists != null)
+            {
+                string json = JsonConvert.SerializeObject(lists);
+                return json;
+            }
+            return null;
+        }
+
+        public string GetAllTags()
+        {
+            List<Tag> lists = _tagContext.Tag.OrderBy(t => t.ID).ToList();
+            if (lists != null)
+            {
+                string json = JsonConvert.SerializeObject(lists);
+                return json;
+            }
+            return null;
+        }
+
+        public List<Dictionary<string, object>> GetArticlesByTagId(int tagId)
+        {
+            List<Dictionary<string, object>> allArticlesMessage = new List<Dictionary<string, object>>();
+            List<Article> articles = _articleContext.Article.Where(a => a.TagId == tagId).ToList();
+            foreach (Article article in articles)
+            {
+                Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
+                keyValuePairs.Add("articleId", article.Id);
+                string content;
+                if (article.Content.Length < 100)
+                {
+                    content = article.Content;
+                }
+                else
+                {
+                    content = article.Content.Substring(0, 99);
+                }
+                keyValuePairs.Add("content", content);
+                keyValuePairs.Add("articleName", article.ArticleName);
+                string createTime = article.InDate.Date.ToString().Substring(0, 9);
+                keyValuePairs.Add("inDate", createTime);
+                keyValuePairs.Add("postStatus", article.Status);
+                keyValuePairs.Add("browseNumber", article.BrowseNumber);
+                int counts = _commentContext.Comment.Where(c => c.ArticleId == article.Id).Count();
+                keyValuePairs.Add("commentCounts", counts);
+                allArticlesMessage.Add(keyValuePairs);
+            }
+            return allArticlesMessage;
         }
     }
 }

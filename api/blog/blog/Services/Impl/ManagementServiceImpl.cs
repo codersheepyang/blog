@@ -8,6 +8,7 @@ using blog.Models.Article;
 using blog.Models.Classification;
 using blog.Models.Comment;
 using blog.Models.Consumer;
+using blog.Models.Tag;
 using log4net;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -25,19 +26,20 @@ namespace blog.Services.Impl
 
         private readonly UserContext _userContext;
 
-
+        private readonly TagContext _tagContext;
         private const string SHEMA = "bank_cookie";
 
 
         private readonly ILog log = LogManager.GetLogger(Startup.Repository.Name, typeof(ManagementServiceImpl));
 
         public ManagementServiceImpl(ArticleContext articleContext, ClassificationContext classificationContext
-                                   , CommentContext commentContext,UserContext userContext)
+                                   , CommentContext commentContext,UserContext userContext,TagContext tagContext)
         {
             _articleContext = articleContext;
             _classificationContext = classificationContext;
             _commentContext = commentContext;
             _userContext = userContext;
+            _tagContext = tagContext;
         }
 
         /// <summary>
@@ -173,7 +175,7 @@ namespace blog.Services.Impl
                 keyValuePairs.Add("content", content);
                 keyValuePairs.Add("articleName", article.ArticleName);
                 string createTime = article.InDate.Date.ToString().Substring(0,9);
-                keyValuePairs.Add("createTime", createTime);
+                keyValuePairs.Add("inDate", createTime);
                 keyValuePairs.Add("postStatus", article.Status);
                 keyValuePairs.Add("browseNumber", article.BrowseNumber);
                 int counts = _commentContext.Comment.Where(c => c.ArticleId == article.Id).Count();
@@ -357,10 +359,10 @@ namespace blog.Services.Impl
         /// 获得所有浏览量
         /// </summary>
         /// <returns></returns>
-        public string GetBrowseNumbers()
+        public string GetBrowseNumbers(int userId)
         {
             int browseNumbers = 0;
-            List<Article> articles = _articleContext.Article.ToList();
+            List<Article> articles = _articleContext.Article.Where(a => a.UserId == userId).ToList();
             if (articles != null && articles.Count != 0)
             {
                 foreach (Article article in articles)
@@ -402,6 +404,13 @@ namespace blog.Services.Impl
                 return json;
             }
             return null;
+        }
+
+        public string GetTagByTagId(int tagId)
+        {
+            Tag tag = _tagContext.Tag.Where(t => t.ID == tagId).FirstOrDefault();
+            string json = JsonConvert.SerializeObject(tag);
+            return json;
         }
     }
 }

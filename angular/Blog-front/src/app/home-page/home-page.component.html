@@ -1,0 +1,9 @@
+<mat-card class="sort_container mat-elevation-z6" style="width:76px;margin: 11px;height:281px">
+    <p>推荐</p>
+    <mat-divider></mat-divider>
+    <div *ngFor="let item of tags">
+        <a routerLink="/rightColumn/{{item['ID']}}" style="color: #707070;text-decoration: none">{{ item["TagName"] }}</a>
+    </div>
+  </mat-card>
+  <div style='padding-top: 11px;'>
+</div>

@@ -2,7 +2,7 @@
         <h1>文章详读</h1>
 </div>
 <div style="display: flex;justify-content: space-between;">
-    <app-left-column></app-left-column>
+<!--    <app-left-column></app-left-column>-->
     <div style="width: 99%;padding-left: 10px">
         <mat-card  _ngcontent-c13="" class="sort_container mat-elevation-z6"  style="margin: 10px">
             <h1>{{article['ArticleName']}}</h1>
@@ -16,7 +16,7 @@
         </mat-card>
         <div style="display: flex;">
             <app-comment [commentId]="article['Id']"></app-comment>
-            <app-hot-articles></app-hot-articles>
+            
         </div>
     </div>
 </div>

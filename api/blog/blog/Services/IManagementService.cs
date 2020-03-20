@@ -11,6 +11,8 @@ namespace blog.Services
 {
     public interface IManagementService
     {
+        string GetTagByTagId(int tagId);
+
         List<Dictionary<string, object>> GetAllArticlesMessage(int userId);
 
         //string articleName, string content, string createUser, int classificationId
@@ -37,7 +39,7 @@ namespace blog.Services
 
         string AddClassification(Classification classification);
 
-        string GetBrowseNumbers();
+        string GetBrowseNumbers(int userId);
 
         int AddPersonalMessage(User user);
 

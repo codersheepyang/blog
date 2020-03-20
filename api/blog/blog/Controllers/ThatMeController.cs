@@ -22,10 +22,10 @@ namespace blog.Controllers
             _aboutMeService = aboutMeService;
         }
 
-        [HttpGet("consumer")]
-        public ActionResult<string> GetConsumer()
+        [HttpGet("consumer/{userId}")]
+        public ActionResult<string> GetConsumer(int userId)
         {
-            string result = _aboutMeService.GetConsumer();
+            string result = _aboutMeService.GetConsumer(userId);
             return Ok(result);
         }
 
@@ -41,10 +41,10 @@ namespace blog.Controllers
             return NotFound("传参存在空值");
         }
 
-        [HttpGet("advertisements")]
-        public ActionResult<string> GetAllAdvertisements()
+        [HttpGet("advertisements/{userId}")]
+        public ActionResult<string> GetAllAdvertisements(int userId)
         {
-            string result = _aboutMeService.GetAllAdvertisements();
+            string result = _aboutMeService.GetAllAdvertisements(userId);
             return Ok(result);
         }
 

@@ -12,7 +12,7 @@ export class AdvertisementsComponent implements OnInit {
   constructor(private loginService : LoginService) { }
 
   ngOnInit() {
-    this.loginService.getAllAdvertisements().subscribe(value => this.allAdvertisements = value);
+    this.loginService.getAllAdvertisements(this.loginService.userId).subscribe(value => this.allAdvertisements = value);
   }
 
 }

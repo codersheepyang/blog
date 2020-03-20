@@ -3,4 +3,5 @@ export interface Advertisement{
     Advertiser:string;
     Title:string;
     Content:string;
+    UserId:Number;
 }

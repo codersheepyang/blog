@@ -178,10 +178,10 @@ namespace blog.Controllers
 
         }
 
-        [HttpGet("browseNumbers")]
-        public ActionResult<string> GetBrowseNumbers()
+        [HttpGet("browseNumbers/{userId}")]
+        public ActionResult<string> GetBrowseNumbers(int userId)
         {
-            string json = _managementService.GetBrowseNumbers();
+            string json = _managementService.GetBrowseNumbers(userId);
             return Ok(json);
         }
 
@@ -197,6 +197,10 @@ namespace blog.Controllers
         {
            return Ok(_managementService.GetPersonalMessage(userId));
         }
-        
+        [HttpGet("tag/{tagId}")]
+        public ActionResult<string> GetTagByTagId(int tagId)
+        {
+            return Ok(_managementService.GetTagByTagId(tagId));
+        }
     }
 }

@@ -56,9 +56,9 @@ namespace blog.Services.Impl
             return "广告ID不存在";
         }
 
-        public string GetAllAdvertisements()
+        public string GetAllAdvertisements(int userId)
         {
-            List<Advertisement> advertisements = _advertisementContext.Advertisement.ToList();
+            List<Advertisement> advertisements = _advertisementContext.Advertisement.Where(a => a.UserId == userId).ToList();
             string json;
             if (advertisements != null)
             {
@@ -69,9 +69,9 @@ namespace blog.Services.Impl
 
         }
 
-        public string  GetConsumer()
+        public string  GetConsumer(int userId)
         {
-            User consumer =  _consumerContext.User.ToList().FirstOrDefault();
+            User consumer =  _consumerContext.User.Where(u => u.ID == userId).FirstOrDefault();
             string json;
             if(consumer != null)
             {

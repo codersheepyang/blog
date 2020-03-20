@@ -22,9 +22,12 @@ export class WriteArticleComponent implements OnInit {
   article : Article;
   placeHolder = "选择你的分类";
   addOrUpdate = "确认添加文章";
+  tag = "选择标签";
   status:boolean= false;
   update : UpdateArticle;
   articleId = null;
+  tagId = null;
+  tags = null;
   @Input() updateArticleMessage = null;
   constructor(
     private loginService :LoginService,
@@ -37,6 +40,9 @@ export class WriteArticleComponent implements OnInit {
       this.getUpdateArticle(articleId);
     }
     this.status = true;
+      this.loginService.getAllTags().subscribe(value => {
+        this.tags = value;
+      });
       this.loginService.getClassificaitons(this.loginService.userId).subscribe(value => this.classifications = value);
   }
 
@@ -48,9 +54,14 @@ export class WriteArticleComponent implements OnInit {
       this.createUser = value['InUser'];
       this.articleId = value['Id'];
       this.classificationId = value['ClassificationId'];
+      this.tagId = value['TagId'];
       this.loginService.getClassification(value['ClassificationId']).subscribe(value =>{
         this.placeHolder = "目前分类: " + value["ClassificationName"];
-      })
+      });
+      this.loginService.getTag(value['TagId']).subscribe(value => {
+        this.tag = "目前标签:" + value['TagName'];
+      });
+
     });
       this.addOrUpdate = "确认修改文章";
       this.status = true;
@@ -72,12 +83,17 @@ export class WriteArticleComponent implements OnInit {
       this.remind = "文章必须有内容！";
       return;
     }
+    if(this.tagId == null || this.tagId == "" || this.tagId == undefined){
+      this.remind = "文章必须有标签！";
+      return;
+    }
     this.article = {
       ArticleName: this.title,
       InUser : this.createUser,
       ClassificationId : this.classificationId,
       Content : this.content,
-      UserId:this.loginService.userId
+      UserId:this.loginService.userId,
+      TagId:this.tagId
     }
     this.loginService.addArticle(this.article).subscribe();
     alert("文章添加成功~");
@@ -106,12 +122,17 @@ export class WriteArticleComponent implements OnInit {
       this.remind = "修改的文章必须有内容！";
       return;
     }
+    if(this.tagId == null || this.tagId == "" || this.tagId == undefined){
+      this.remind = "修改的文章必须有标签！";
+      return;
+    }
     this.update = {
       ArticleName : this.title,
       Id : this.articleId,
       ClassificationId : this.classificationId,
       Content : this.content,
-      UserId:this.loginService.userId
+      UserId:this.loginService.userId,
+      TagId:this.tagId
     }
     this.loginService.updateArticle(this.update).subscribe();
     alert("文章修改成功!");
@@ -119,13 +140,21 @@ export class WriteArticleComponent implements OnInit {
     
   }
 
-  selected(event: MatSelectChange) {
+  selectedClassificaiton(event: MatSelectChange) {
     const selectedData = {
         text: (event.source.selected as MatOption).viewValue,
         value: event.source.value
     }
     this.classificationId = selectedData.value;
 }
+selectedTag(event: MatSelectChange) {
+  const selectedData = {
+      text: (event.source.selected as MatOption).viewValue,
+      value: event.source.value
+  }
+  this.tagId = selectedData.value;
+}
+
 
   // 同步属性内容
   syncModel(str): void {

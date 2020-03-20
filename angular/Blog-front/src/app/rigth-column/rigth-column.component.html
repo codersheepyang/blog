@@ -1,15 +1,22 @@
-<div style="width: 99%;padding-left: 1%;">
-    <div>
-        <ul *ngFor="let item of allArticleMessage" style="width: 100%;padding-left: 0%">
-            <mat-card style="margin: 10px" _ngcontent-c13="" class="sort_container mat-elevation-z6">
-                <a routerLink="/article/{{item['articleId']}}" style="text-decoration: none">
-                    <p style="color: #3f51b5">{{item['articleName']}}</p>
-                </a>
-                <p>{{item['content']}}</p>
-                <span style="padding-right: 20px;color:#a9a9a9">{{item['createTime']}}</span>
-                <span style="padding-right: 20px;color:#a9a9a9">浏览量:{{item['browseNumber']}}</span>
-                <span style="padding-right: 20px;color:#a9a9a9">评论数:{{item['commentCounts']}}</span>
-            </mat-card>
-        </ul>
+<div style="display: flex">
+    <div *ngIf='tagId'>
+        <app-home-page></app-home-page>
+    </div>
+    <div style="width: 99%;padding-left: 1%;">
+        <div>
+            <ul *ngFor="let item of allArticleMessage" style="width: 100%;padding-left: 0%">
+                <mat-card style="margin: 10px" _ngcontent-c13="" class="sort_container mat-elevation-z6">
+                    <a routerLink="/article/{{ item['articleId'] }}" style="text-decoration: none">
+                        <p style="color: #3f51b5">{{ item["articleName"] }}</p>
+                    </a>
+                    <p>{{ item["content"] }}</p>
+                    <span style="padding-right: 20px;color:#a9a9a9">{{
+            item["createTime"]
+          }}</span>
+                    <span style="padding-right: 20px;color:#a9a9a9">浏览量:{{ item["browseNumber"] }}</span>
+                    <span style="padding-right: 20px;color:#a9a9a9">评论数:{{ item["commentCounts"] }}</span>
+                </mat-card>
+            </ul>
+        </div>
     </div>
 </div>

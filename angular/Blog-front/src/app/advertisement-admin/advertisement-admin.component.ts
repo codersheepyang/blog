@@ -18,14 +18,19 @@ export class AdvertisementAdminComponent implements OnInit {
   {
     if(this.Advertiser == null || this.Title == null || this.Content == null)
     {
-      alert("请完整添加所有信息" + this.Advertiser + this.Title + this.Content);
+      alert("请完整添加所有信息");
       return;
+    }
+    if(this.Title.length > 20)
+    {
+      alert("广告名称过长");
     }
     this.advertisement = {
       ID:0,
       Advertiser : this.Advertiser,
       Title : this.Title,
-      Content:this.Content
+      Content:this.Content,
+      UserId:this.loginService.userId
     }
     this.loginService.addAdvertisement(this.advertisement).subscribe();
     alert("广告添加成功");

@@ -15,7 +15,7 @@ namespace blog.Services
     {
         string AddAdvertisement(Advertisement advertisement);
         string DeleteAdvertisement(int advertisementId);
-        string GetAllAdvertisements(); 
-        string GetConsumer();
+        string GetAllAdvertisements(int userId); 
+        string GetConsumer(int userId);
     }
 }

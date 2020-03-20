@@ -44,8 +44,24 @@ export class LoginService {
   private classificationsUrl = `${this.managementAddress}/classifications`;
   private hotArticleUrl = `${this.articleAddress}/articleByReadCounts`;
   private articlesByUpdateTimeUrl = `${this.articleAddress}/articleByUpdateTime`;
+  private classifcationsUrl = `${this.articleAddress}/classifications`;
+  private tagsUrl = `${this.articleAddress}/tags`;
+  private articlesByTagIdUrl = `${this.articleAddress}/articlesByTagId`;
+  private tagUrl = `${this.managementAddress}/tag`;
+
   
   constructor(private http: HttpClient) { }
+
+  getArticlesByTagId(tagId:Number):Observable<any>{
+    const url = `${this.articlesByTagIdUrl}/${tagId}`;
+    return this.http.get<any>(url);
+  }
+  getAllTags():Observable<any>{
+    return this.http.get<any>(this.tagsUrl);
+  }
+  getAllClassifications():Observable<any>{
+    return this.http.get<any>(this.classifcationsUrl);
+  }
 
   getPersonalMessage(userId:Number):Observable<any>{
     const url = `${this.personalMessageUrl}/${userId}`;
@@ -73,8 +89,9 @@ export class LoginService {
     return this.http.get<any>(url);
   }
 
-  getConsumer():Observable<any>{
-    return this.http.get<any>(this.consumerUrl);
+  getConsumer(userId:NumberConstructor):Observable<any>{
+    const url = `${this.consumerUrl}/${userId}`;
+    return this.http.get<any>(url);
   }
 
   addArticle(article:Article):Observable<any>{
@@ -87,8 +104,9 @@ export class LoginService {
     return this.http.get(url);
  }
 
- getAllAdvertisements():Observable<any>{
-   return this.http.get<any>(this.advertisementsUrl);
+ getAllAdvertisements(userId:Number):Observable<any>{
+  const url = `${this.advertisementsUrl}/${userId}`;
+  return this.http.get(url);
  }
 
   updateClassification(classification:Classification):Observable<any>{
@@ -143,8 +161,13 @@ export class LoginService {
     return this.http.get<any>(`${this.classificationUrl}/${id}`);
   }
 
-  getBrowseNumber(): Observable<any> {
-    return this.http.get<any>(this.browseNumberUrl);
+  getTag(id: number): Observable<any> {
+    return this.http.get<any>(`${this.tagUrl}/${id}`);
+  }
+
+  getBrowseNumber(userId:number): Observable<any> {
+    const url = `${this.browseNumberUrl}/${userId}`;
+    return this.http.get<any>(url);
   }
 
   getCommentsByArticleId(id: number): Observable<any> {

@@ -4,4 +4,5 @@ export interface UpdateArticle{
     Content:string;
     ClassificationId:number;
     UserId:Number;
+    TagId:Number;
 }

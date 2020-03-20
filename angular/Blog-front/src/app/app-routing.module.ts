@@ -14,10 +14,13 @@ import {PhotosComponent} from '../app/photos/photos.component';
 import { AdvertisementAdminComponent } from '../app/advertisement-admin/advertisement-admin.component'
 import {BlogRegisterComponent} from '../app/blog-register/blog-register.component'
 import{BlogLoginComponent} from '../app/blog-login/blog-login.component'
+import{HomePageComponent} from '../app/home-page/home-page.component'
 import{PersonalMessageComponent} from '../app/personal-message/personal-message.component'
+import { RigthColumnComponent } from './rigth-column/rigth-column.component';
 const routes: Routes = [
     {path:'personalMessage',component:PersonalMessageComponent},
-    {path:'',redirectTo:'/articleList',pathMatch:'full'},
+    {path:'homepage',component:HomePageComponent},
+    {path:'',redirectTo:'homepage',pathMatch:'full'},
     {path:'articleList',component:ArticleListComponent},
     {path:'admin',component:AdminComponent},
     {path:'aboutMe',component:AboutMeComponent},
@@ -28,6 +31,7 @@ const routes: Routes = [
     {path:'login',component:BlogLoginComponent},
     //参数化路由
     {path:'article/:id',component:ArticleComponent},
+    {path:'rightColumn/:id',component:RigthColumnComponent},
     {path:'classification',component:ClassificationComponent},
     {path:'rightAdmin',component:RightAdminComponent},
     {path:'commentAdmin',component:CommentAdminComponent},

@@ -11,6 +11,6 @@ export class AboutMeComponent implements OnInit {
   constructor(private loginService :LoginService) { }
 
   ngOnInit() {
-    this.loginService.getConsumer().subscribe(value => this.consumer = value);
+    this.loginService.getConsumer(this.loginService.userId).subscribe(value => this.consumer = value);
 }
 }

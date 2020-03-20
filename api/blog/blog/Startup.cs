@@ -10,6 +10,7 @@ using blog.Models.Article;
 using blog.Models.Classification;
 using blog.Models.Comment;
 using blog.Models.Consumer;
+using blog.Models.Tag;
 using blog.Services;
 using blog.Services.Impl;
 using log4net;
@@ -58,6 +59,7 @@ namespace blog
             services.AddDbContext<CommentContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<AdvertisementContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<TagContext>(options => options.UseSqlServer(connection));
 
             //DI
             services.AddTransient<IUserService, UserServiceImpl>();

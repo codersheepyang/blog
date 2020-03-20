@@ -31,10 +31,6 @@ namespace blog.Controllers
         {
             if (comment.Content != null && comment.ArticleId != 0 && comment.FirstComment != false)
             {
-                if (comment.CommentName == null)
-                {
-                    comment.CommentName = "Anonymous";
-                }
                 comment.CreateTime = DateTime.Now;
                 string result = _articleService.AddComment(comment);
                 return Ok(result);
@@ -109,6 +105,27 @@ namespace blog.Controllers
         public ActionResult<string> GetAllCommentsByArticleId(int articleId)
         {
             string result = _articleService.GetAllCommentsByArticleId(articleId);
+            return Ok(result);
+        }
+
+        [HttpGet("classifications")]
+        public ActionResult<string> GetAllClassfications()
+        {
+            string result = _articleService.GetAllClassfications();
+            return Ok(result);
+        }
+
+        [HttpGet("tags")]
+        public ActionResult<string> GetAllTags()
+        {
+            string result = _articleService.GetAllTags();
+            return Ok(result);
+        }
+
+        [HttpGet("articlesByTagId/{tagId}")]
+        public ActionResult<string> GetArticlesByTag(int tagId)
+        {
+            List<Dictionary<string, object>> result = _articleService.GetArticlesByTagId(tagId);
             return Ok(result);
         }
     }

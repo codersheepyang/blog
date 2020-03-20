@@ -21,9 +21,15 @@
                     <input [(ngModel)]="title" matInput placeholder="标题" />
                 </mat-form-field>
                 <mat-form-field style="padding-left: 20px">
-                    <mat-select placeholder="{{placeHolder}}" (selectionChange)="selected($event)" formControName="Id" >
+                    <mat-select placeholder="{{placeHolder}}" (selectionChange)="selectedClassificaiton($event)" formControName="Id" >
                         <mat-option *ngFor="let item of classifications" [value]="item['Id']"  >
                             {{ item['ClassificationName']}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field style="padding-left: 20px">
+                    <mat-select placeholder="{{tag}}" (selectionChange)="selectedTag($event)" formControName="Id" >
+                        <mat-option *ngFor="let item of tags" [value]="item['ID']"  >
+                            {{ item['TagName']}}</mat-option>
                     </mat-select>
                 </mat-form-field>
                         <button (click)="addOrUpdateArticle()" mat-button style="background:lightgray;padding-left: 10px;margin-left: 20px">

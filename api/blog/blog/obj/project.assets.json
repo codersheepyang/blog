@@ -13401,23 +13401,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cy76\\.nuget\\packages\\": {},
+    "C:\\Users\\YangK\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cy76\\Desktop\\blog\\api\\blog\\blog\\blog.csproj",
+      "projectUniqueName": "C:\\Users\\YangK\\Desktop\\Cookie.K.Yang\\api\\blog\\blog\\blog.csproj",
       "projectName": "blog",
-      "projectPath": "C:\\Users\\cy76\\Desktop\\blog\\api\\blog\\blog\\blog.csproj",
-      "packagesPath": "C:\\Users\\cy76\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cy76\\Desktop\\blog\\api\\blog\\blog\\obj\\",
+      "projectPath": "C:\\Users\\YangK\\Desktop\\Cookie.K.Yang\\api\\blog\\blog\\blog.csproj",
+      "packagesPath": "C:\\Users\\YangK\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\YangK\\Desktop\\Cookie.K.Yang\\api\\blog\\blog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\cy76\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\YangK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13425,10 +13425,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.newegg.org/nuget/": {},
-        "http://scmisrma02/AlphaNugetServer/nuget/": {},
-        "http://scmisrma02/NugetServer/nuget/": {},
-        "http://scmisrma02:9999/NugetServer/nuget/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

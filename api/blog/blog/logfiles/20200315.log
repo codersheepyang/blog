@@ -1,0 +1,153 @@
+2020-03-15 12:08:07,580 [6] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 12:08:10,051 [11] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 12:08:10,078 [11] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 12:08:57,073 [11] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 12:08:57,083 [11] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 12:12:21,354 [52] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 12:12:21,367 [52] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 12:13:47,566 [52] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 12:13:47,580 [52] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 12:21:16,184 [97] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 12:21:16,193 [97] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 12:21:27,056 [113] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为技术
+2020-03-15 12:21:34,025 [118] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为总结
+2020-03-15 12:21:38,665 [69] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为学习笔记
+2020-03-15 12:21:50,175 [106] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为生活
+2020-03-15 12:23:14,405 [106] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:面试总结,添加的用户是:Cookie,添加的分类Id为:2
+2020-03-15 12:24:12,334 [120] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:动态规划,添加的用户是:Cookie,添加的分类Id为:1
+2020-03-15 12:25:16,869 [120] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:一个新的开始,添加的用户是:Cookie,添加的分类Id为:4
+2020-03-15 12:26:14,563 [160] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:我是否在团队发挥了最大价值？,添加的用户是:Cookie,添加的分类Id为:2
+2020-03-15 12:27:08,016 [159] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:T-SQL学习笔记,添加的用户是:Cookie,添加的分类Id为:3
+2020-03-15 13:58:25,493 [45] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 13:58:25,588 [45] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 13:59:25,927 [61] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 13:59:25,936 [61] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 14:42:37,235 [14] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 14:42:37,373 [14] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:22:33,559 [76] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:22:33,734 [76] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:23:36,427 [78] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:23:36,436 [78] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:29:30,553 [109] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:29:30,561 [109] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:30:17,869 [107] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:30:17,877 [107] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:32:50,341 [89] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:32:50,350 [89] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:34:08,706 [74] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:34:08,714 [74] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:41:18,532 [89] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:41:18,540 [89] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 15:53:29,029 [11] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 15:53:29,130 [11] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 16:01:10,805 [45] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 16:01:10,815 [45] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 16:42:25,988 [6] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 16:42:26,069 [6] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 16:43:24,288 [6] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 16:43:24,299 [6] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 16:54:09,015 [6] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 16:54:09,022 [6] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:00:38,560 [95] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:00:38,588 [95] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:03:22,122 [122] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:03:22,131 [122] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:10:07,246 [56] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:10:07,256 [56] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:11:12,948 [38] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:11:12,960 [38] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:12:49,256 [43] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:12:49,264 [43] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:21:59,135 [175] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:21:59,146 [175] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:30:35,505 [225] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:30:35,522 [225] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:32:17,630 [240] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:32:17,640 [240] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:32:44,351 [175] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:区块链学习,添加的用户是:Cookie,添加的分类Id为:1
+2020-03-15 17:33:11,833 [175] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:6
+2020-03-15 17:33:11,933 [175] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:1
+2020-03-15 17:40:12,661 [18] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:6
+2020-03-15 17:40:13,466 [21] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:1
+2020-03-15 17:41:27,675 [11] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:6
+2020-03-15 17:41:27,858 [29] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:1
+2020-03-15 17:41:32,049 [28] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:41:32,085 [28] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:41:40,395 [6] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:6
+2020-03-15 17:41:40,554 [30] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:1
+2020-03-15 17:41:53,706 [27] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:1
+2020-03-15 17:41:53,782 [19] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:2
+2020-03-15 17:41:56,383 [11] INFO  blog.Controllers.ManagementController [(null)] - 面试总结### 一.新蛋面试
+&emsp;&emsp;此次面试是在4月8日接到HR小姐姐的面试通知(简历在拉钩网投递),然后没想到的是直接让我去成都面试，我以为的流程应是先网络笔试或面试，因为这样可能对于面试者来说成本要低，而且双方都方便，因为如果现面面试者失败...,所以在电话通知了之后，就利用那离面试前的几天的时间好好的准备了一番，然后在4月13日也就是星期六的时候买了早早的票(8点的票，1点面试)。青城山到成都高新区的距离也就2个小时的时间，由于总担心会延误或是会出意外，所以我在10点就基本已经到了新蛋的工作区了...到了新蛋之后，工作区总的来说还是蛮好的，然后在门口值班的小姐姐也好漂亮的，虽说是1点才开始笔试面试，但是由于我到的比较早，所以就把笔试题给我让我先做了，令我诧异的是竟然只有一道编程题，而且难度中偏低，一道简单的利用双指针就可以解决的题(一拿到手想的开辟一个数组空间存重复的值..但感觉这样做过于鸡肋，然后想到的就是双指针，更好的方式就不晓得了..)，所以也是非常顺利的就做出来了，只是在完成后发现少了边界条件的判断而重新再抄了一遍..做完之后就去吃了饭，中途一直等到1点面试官就如约而至的来了。然后面试官也很随和(公司的架构师)，没有什么架子和压迫感.面试流程也和我在一些网站看的大同小异吧。开始是自我介绍，结束时反问问题。总体来说我答的感觉不是令我自己很满意，但是每个点基本都答了很多内容，毕竟还是有点紧张的..交流的过程还是很舒服轻松的。下面是问题内容:
+	&emsp;&emsp;1.反射(问到了作用，java为什么会有反射，反射的性能和如何优化反射)
+	&emsp;&emsp;2.gc和内存模型
+	&emsp;&emsp;3.synchronized和valatile。(说了sync的原子性和可见性，以及作用域，valatile说了可见性，和它是如何保持可见的：利用内存屏障、缓存刷新)
+	&emsp;&emsp;4.问了问背包(面试官竟然说不知道背包--，我是在算法那本书上看到的..)
+	&emsp;&emsp;5.聊了聊spring的IOC,AOP的作用和一些简单的原理
+	&emsp;&emsp;6.mysql和redis(mysql主要说了一下事务隔离机制和事务，其实还有好多没说..索引及运用等等..，redis就知道它是个非关系性数据库以及依靠缓存的快速查询机制...)
+	&emsp;&emsp;7.说说设计模式(主要说了框架中的三大设计模式：单例、代理、工厂)
+	&emsp;&emsp;总的来说，感觉面试官没问多少问题..但是还是稍有难度，我很诧异的是他竟然没有问Java(主要可能是因为面试官可能是C#架构师...)、网络相关以及数据结构和算法等等，其实我还是有点想去应对这些问题的。一面完了之后就是HR小姐姐的二面了，全程聊的很开心，主要就问了一些学校经历，对自己的看法和未来的薪资等，然后当面也拿到了口头offer，并且在5月份会发实体offer.
+&emsp;&emsp;其实此次面试还是很开心的，薪资待遇和工作环境都比较满意...唯一让我觉得不好的一点就是公司主要以C#作为主开发语言，进入公司需要培训学习C#...所以接下来我肯定是需要继续努力投递java开发相关的公司...虽说一个优秀的程序员不应该被束缚在一种语言中，但是我还是很喜欢java，以及我已经付出了很多时间来学习它了，也感受到了java的魅力所在..这第一次就成功的offer也让我有了一个很好的底子，所以，继续加油！！
+	
+### 二.阿里电话面
+&emsp;&emsp;匆忙！匆忙！匆忙！这是我面试完脑子蹦出的第一个词.如果说就吞吞吐吐思路不清知识点不明了的回答就可以进入像阿里这种量级的互联公司的话，那谁还不是个架构师呢？
+&emsp;&emsp;就在4月13号当我面试完新蛋公司感觉还蛮顺利之后，我以为面试真的就是这么简单...和面试官畅谈风声..然后结束给个口头offer，一切看起来这么轻松愉快...其实不然，今天的阿里面试，让我知道了知己知彼，才能百战百胜...如果你连准都没准备好就去迎接一场挑战，那么大概率的会是一个不满的结果！所以这是一次教训也是一次成长，为每次的不足做个记录，慢慢弥补空缺，相信不久的一天我会拿到满意的offer。
+&emsp;&emsp;今天(4.30日)19：45我接到了阿里国际部一位面试官的电话面试，第一步当然是做一个自我介绍，然而这本是一个套模板的机会...却让我介绍的一点都不利索，还没有一个好的结尾，所以在这几天我一定需要有一个 *流利的完整的自我介绍的模板* ，接下来是正式的第一个问题，**说说快速排序和选择排序**，我大概说了快排和选择的大致思想和时间复杂度。然后他问我空间复杂度脑子卡壳没有回答上，甚至差点连选择排序都忘记了...然后问我稳定性，这期间我连*稳定性的定义*都给搞错了...第二个问题是**项目介绍**，我简单的介绍了一下我们学校做的专家测评系统...吞吞吐吐并不只是自我介绍，这维持了一整场面试...并且我感觉电面和现面氛围相当不一样，面试官的神情、表达以及一些动作这都是电面捕获不了的，只有通过声音交流，而且在我回答几乎所有问题的时候，面试官都一声不吭，在每次回答完都要等个5秒左右才会收到响应..这肯定也是我没回答好让面试官捕获不到结束的点...，第三个问题是**找出在一天中通过IP访问网页次数最多的那个用户**，但是文件大小超出内存，这个是我后面想了很久才想起先用hashmap统计相同IP的访问次数，然后再使用多路归并进行排序，最后取最大的。第四个问题是**求两个非环链表的交叉节点**，完全没回答上...，技术方面就到此为止了，可能是前面的回答不尽人意，所以后面面试官就直接问了我简单的问题，如 **以后的规划**，最近关注的新技术等等，由于前面表现的差的连锁反应，导致了后面表现也很差，回答的不好。而这次面试也就以这样一个不好的结果而结束了，虽说面试官说让我等消息但应该是凉了。面试官全程也很耐心，人很好，给我回答问题的时间，不慌不忙(应该还在公司敲代码之类的..)，结果虽然不好，但这次面试在总结了之后相信我能汲取教训，为后面大公司的面试做好准备，不至于连自己有的东西都发挥不出去！
+&emsp;&emsp;状态：已挂
+
+### 三.SAP
+&emsp;&emsp;1.电话面
+&emsp;&emsp;面试时间：2019.6.13
+&emsp;&emsp;这次面试的机会是通过在班群发布的招聘信息上发现的，因为发现公司环境不错而且日薪超高，所以投了简历，在第二天便收到了回复通知，而在今天便收到了电话，不得不说，效率相对于其他公司来说真的高好多好多，好评！很有幸面试官也是我们学校的。大致来说这次面试我表现的比较差，因为很多知识没有复习不能立马答上来。并且感觉还是得好好努力呀！
+&emsp;&emsp;面试内容：
+&emsp;&emsp;1.自我介绍
+&emsp;&emsp;2.设计模式：讲了单例，代理(**cglib**)，**工厂**忘记了没说
+&emsp;&emsp;3.**类加载器**：回答比较简单，没有讲清楚
+&emsp;&emsp;4.新生代和老年代的区别：标记次数
+&emsp;&emsp;5.标记算法：唯一答得比较满意的...
+&emsp;&emsp;6.数据库：问了触发器和存储过程...存储过程后面用的少快忘掉了，触发器根本不了解...
+&emsp;&emsp;7.项目：痛点..之前做的项目都过于简单，后面一定会抓一抓。
+&emsp;&emsp;8.如何理解线程安全，锁。
+&emsp;&emsp;面试结束面试官也给了建议让修改一下简历，因为自己简历在技术的程度上可能没有把握好所以有些写的熟练的技术却没有回答好，而且后面还鼓励了一下我，总之，还挺好的，先不论结果在过程中发现了自己后面应该关注的重点在哪里也挺好的，继续加油，努力改变自己！
+&emsp;&emsp;状态：通过
+&emsp;&emsp;2.现场面
+&emsp;&emsp;面试时间：2019.6.21
+&emsp;&emsp;电话面试回答的并不好，本以为都会直接挂了，结果17号收到了HR小姐姐的现场面试的邀请，只能说面试真的是玄学...然后好好的在实验室准备了4天，在星期五早早的就到了sap的成都分部(3点开始，1点到)，在招聘信息上就已经看到sap的环境很好，但是到了现场,那是真的好啊！！所以当时在等待的时候就决心要进这家公司了，当时不知为何信心暴增..直到面试结束...大概在三点，面试官如约而至，这期间hr小姐姐也很好，很照顾我，各种问我需要什么。然后面试过程中，是两个面试官，一个面试官是做底层工具的，一个还是实习生(但是能力真的很强，特别是算法)。
+&emsp;&emsp;面试内容：
+&emsp;&emsp;1.自我介绍
+&emsp;&emsp;2.基于oracle的一种数据库(忘记名字了，好像是那个部门会用的)：不了解
+&emsp;&emsp;3.快排：说了各种复杂度、稳定性和思想。	问为什么平均复杂度为是O(nlog2n),说了自己的想法，好像不对..
+&emsp;&emsp;4.红黑树：不会	
+&emsp;&emsp;5.加密算法底层：会用但是不了解底层(知道MD5是哈希忘记说)
+&emsp;&emsp;6.TCP建立连接为什么需要三次：信息对等
+&emsp;&emsp;7.应用层协议有哪些，除了HTTP：HTTPS算吗...，DNS算一个
+&emsp;&emsp;8.设计模式：说了单例的各种实现，代理模式的JDK动态代理，及为什么要动态代理(简述了和静态代理的区别)
+&emsp;&emsp;9.邮件的正则：憋了好久没写出来好久没写过了..
+&emsp;&emsp;10.xml转json:疯了..
+&emsp;&emsp;11.优化sql，让模糊查询走索引：%匹配符不能在字符前面
+&emsp;&emsp;12.项目介绍
+&emsp;&emsp;13.int多少位：32位
+&emsp;&emsp;14.启动线程的方式：Thread.start，线程池自动启动,callable
+&emsp;&emsp;15.JUC包
+&emsp;&emsp;16.redis
+&emsp;&emsp;17.消息队列
+&emsp;&emsp;18.动态规划
+&emsp;&emsp;35分钟问了这么多问题..可想而知我答的是有多差..面完在回学校的途中自闭了2个小时(小姐姐都不想看那种),不过最后还嘚好好总结自己，刚还看到一个关于面试挂了如何调整心态的一篇贴，看到一个回复："这种难受客观上回促进你的成长"，我觉得失败不重要，总结失败才能让下一次不至于失败得那么难看吧...总结这次面试感受，那位实习生确实很强,自己感受到了差距..然后就是面试官的问题方式以前没遇到过，面试官直接问："你会XXX吗",我:"我会(这时候以为会接下来问这个问题的细节)"，面试官："好的下一个问题(哭)"，所以这种情况下应该在说了会之后，立马说会什么。还有就是回答问题一定要有条理，不要像背出来的，要让面试官感觉你是实践过的，最后用过的技术不要写熟练,要自己能知道那个技术的底层才行。最后最后，加油就完事！
+&emsp;&emsp;状态：等通知
+
+21
+2020-03-15 17:41:59,149 [20] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:1
+2020-03-15 17:41:59,277 [29] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:2
+2020-03-15 17:42:10,262 [27] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:5
+2020-03-15 17:42:10,373 [20] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:3
+2020-03-15 17:42:15,340 [6] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:6
+2020-03-15 17:42:15,438 [27] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:1
+2020-03-15 17:44:21,009 [37] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-15 17:44:22,861 [19] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-15 17:44:22,870 [19] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-15 17:49:59,646 [12] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-15 17:50:00,140 [12] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-15 17:50:22,540 [6] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:50:22,546 [6] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-15 17:51:56,822 [29] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-15 17:51:56,836 [29] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确

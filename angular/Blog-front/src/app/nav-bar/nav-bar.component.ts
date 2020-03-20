@@ -6,7 +6,7 @@ import {LoginService} from '../services/blog.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  title = '博客';
+  title = '首页';
   head = '../../assets/img/head.png';
   status = "未登录";
   constructor(private loginService : LoginService) { 

@@ -54,6 +54,6 @@ export class LeftColumnComponent implements OnInit {
       }
     });
     //获得浏览总数
-    this.loginService.getBrowseNumber().subscribe(value => this.browseNumber = value);
+    this.loginService.getBrowseNumber(this.loginService.userId).subscribe(value => this.browseNumber = value);
   }
 }

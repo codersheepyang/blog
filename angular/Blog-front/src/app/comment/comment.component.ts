@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {LoginService } from '../services/blog.service';
 import {Comment} from '../entities/comment';
 // import { Comment, Comment } from '@angular/compiler';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
@@ -15,7 +16,7 @@ export class CommentComponent implements OnInit {
   @Input() email:string;
   @Input() name:string;
   comment:Comment;
-  constructor(private loginService : LoginService) { }
+  constructor(private loginService : LoginService,private router : Router) { }
 
   ngOnInit() {
     this.loginService.getCommentsByArticleId(this.commentId).subscribe(value => {
@@ -25,6 +26,14 @@ export class CommentComponent implements OnInit {
       }});
   }
   addContent():void{
+    if(this.loginService.userId == undefined)
+    {
+      this.loginService.articleId =this.commentId;
+      console.log("commentId:",this.commentId);
+      alert("请登录再评论");
+      this.router.navigateByUrl('/login');
+      return;
+    }
     console.log("name:" + this.name + "email:" + this.email + "content:" + this.content);
     if(this.content == null || this.content == "" || this.content == undefined)
     {

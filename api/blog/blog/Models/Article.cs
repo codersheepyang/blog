@@ -20,6 +20,7 @@ namespace blog.Models.Article
         public int BrowseNumber { get; set; }
         public int ClassificationId { get; set; }
         public bool Status { get; set; }
+        public int TagId { get; set; }
         public Comment.Comment Comment { get; set; }
        
     }

@@ -1,0 +1,115 @@
+2020-03-16 11:40:08,062 [7] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 11:40:08,177 [7] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 11:41:40,191 [103] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 11:41:40,199 [103] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 11:42:03,393 [102] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 11:42:03,403 [102] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 12:21:19,680 [25] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 12:21:19,687 [25] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 12:28:23,432 [151] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 12:28:23,441 [151] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 12:29:15,834 [152] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 12:29:15,845 [152] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 12:30:10,836 [163] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-16 12:30:10,845 [163] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-16 12:31:00,698 [164] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为学习
+2020-03-16 12:31:05,250 [173] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为生活
+2020-03-16 12:31:11,766 [163] INFO  blog.Controllers.ManagementController [(null)] - 添加的分类为公司
+2020-03-16 12:31:35,085 [175] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:flex布局学习,添加的用户是:Tony,添加的分类Id为:5
+2020-03-16 12:32:02,236 [175] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:对技术的思考之网络,添加的用户是:Tony,添加的分类Id为:5
+2020-03-16 12:32:05,895 [175] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:8
+2020-03-16 12:32:05,999 [175] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:5
+2020-03-16 12:32:11,017 [153] INFO  blog.Controllers.ManagementController [(null)] - 对技术的思考之网络### 一.协议
+1.应用层协议：
+&emsp;&emsp;①HTTP(HypearText Transfer Protocol,超文本传输协议)：是一种需要一些机制去保持状态、面向C/S系统的基于TCP的网络协议。
+&emsp;&emsp;②DNS(Domain Name System,域名系统):该协议可对访问者的域名地址解析成IP地址，然后通过准确的IP地址去访问指定的服务器。
+&emsp;&emsp;③SMTP(Simple Mail Transfer Protocol,简单邮件传输协议):邮件服务通常使用该协议。
+&emsp;&emsp;④FTP(File Transfer Protocol,文件传输协议):顾名思义，系统与系统之间传输文件的协议。
+58
+2020-03-16 12:32:13,872 [158] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:7
+2020-03-16 12:32:13,965 [167] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:5
+2020-03-16 12:32:18,220 [175] INFO  blog.Controllers.ManagementController [(null)] - flex布局学习
+一.初识flex布局：
+&emsp; &emsp;Flex 是Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。 任何一个容器都可以指定为Flex 布局。在不知道 Flex布局之前，我都是采用 display + position + float 这几个原生的属性去对块元素进行布局处理的，我还记得当时想把布局设置成我所想象样子是要在CSS中写一大堆属性，然后还可能出现属性之间的冲突，反正是非常的不方便。而 Flex 语法的简洁性和易用性一下子就能将你的页面排版的非常好看，总之，在昨天用flex布局做了个人简历的作业之后，深有体会。而今天，打算跟着阮一峰老师的博文好好学习一番。
+      
+二.基本概念：
+&emsp; &emsp;采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"。(那么在我昨天使用div块元素的时候，它就算是一个'项目'吧)
+&emsp; &emsp;容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置叫做 main start ，结束位置叫做 main end；交叉轴的开始位置叫做 cross start，结束位置叫做 cross end。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/bg2015071004.png) 
+三.容器的属性：
+&emsp; &emsp;容器一共有六个属性：
+&emsp; &emsp;1.	flex-direction:属性决定主轴的方向(项目的排列方向)，那么它存在四个值：
+&emsp; &emsp; &emsp; &emsp;row(默认值)：主轴为水平方向，起点在左端（好了，我知道为什么我昨天的div默认为横向排版 - -）
+&emsp; &emsp; &emsp; &emsp;![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/Capture.PNG)          
+&emsp; &emsp; &emsp; &emsp;row-reverse：主轴为水平方向，起点在右端。
+&emsp; &emsp; &emsp; &emsp;![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/Capture1.PNG)                
+&emsp; &emsp; &emsp; &emsp;column:主轴为垂直方向，起点在上沿
+&emsp; &emsp; &emsp; &emsp;![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/Capture3.PNG)
+&emsp; &emsp; &emsp; &emsp;column-reverse:主轴为垂直方向，起点在下沿
+&emsp; &emsp; &emsp; &emsp;![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/Capture4.PNG)
+&emsp; &emsp; 2.flex-wrap属性：默认情况下，项目都排在一条线(又称"轴线")上，flex-wrap属性定义，如果一条轴线排不下，应如何换行。
+&emsp; &emsp; &emsp; &emsp;nowrap(默认):不换行。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture5.png)
+&emsp; &emsp; &emsp; &emsp;wrap:换行，第一行在上方。(即可呈现一个响应式的布局，页面内容随六浏览器大小变动，比较人性化)
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture6.png)
+&emsp; &emsp; &emsp; &emsp;wrap-reverse:换行，第一行在下方。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture7.png)
+&emsp; &emsp;3.flex-flow:是flex-direction属性和flex-wrap属性的简写形式，默认值为 row nowrap.(懒人专属属性)
+&emsp; &emsp;4.justify-content：属性定义了每个项目在主轴上相对的对齐方式。
+&emsp; &emsp; &emsp; &emsp;flex-start(默认值):左对齐。和flex-drection的row一样
+&emsp; &emsp; &emsp; &emsp;flex-end:右对齐。和flex-drection的row-reverse一样
+&emsp; &emsp; &emsp; &emsp;center:居中。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture8.png)	
+&emsp; &emsp; &emsp; &emsp;space-between:两端对齐，项目之间的间隔都相等。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/Capture9.PNG)
+&emsp; &emsp; &emsp; &emsp;space-around:每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture10.png)&emsp; &emsp;5.align-items:属性定义项目在交叉轴上如何对齐。
+&emsp; &emsp; &emsp; &emsp;flex-start:交叉轴的起点对齐。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture11.png)
+&emsp; &emsp; &emsp; &emsp;flex-end:交叉轴的终点对齐。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture12.png)
+&emsp; &emsp; &emsp; &emsp;center:交叉轴的中点对齐。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture13.png)
+&emsp; &emsp; &emsp; &emsp;baseline:项目的第一行文字的基线对齐。 
+&emsp; &emsp; &emsp; &emsp;stretch(默认值):如果项目未设置高度或设为auto，将占满整个容器的高度。
+&emsp; &emsp;6.align-content：属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+&emsp; &emsp; &emsp; &emsp;flex-start:与交叉轴的起点对齐。
+&emsp; &emsp; &emsp; &emsp;flex-end:与交叉轴的终点对齐。
+&emsp; &emsp; &emsp; &emsp;center:与交叉轴的中点对齐。
+&emsp; &emsp; &emsp; &emsp;space-between:与交叉轴两端对齐，轴线之间的间隔平均分布。
+&emsp; &emsp; &emsp; &emsp;space-around:每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+&emsp; &emsp; &emsp; &emsp;stretch(默认值)：轴线占满整个交叉轴。
+
+四.项目的属性
+&emsp; &emsp;除了容器的布局有属性之外，对项目本身也有属性，项目本身的属性会改变项目在容器中的一些状态。项目一共有六个属性。
+&emsp; &emsp;1.order: 属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。例如，在三个项目中，我将第二个项目的order大小设置为3，那么它就会排列在所有order比它小的项目的后面。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture14.png)
+&emsp; &emsp;2.flex-grow:属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 通过将第一个项目设置为1，第二个项目设置为2，第三个项目设置为3.可以看出来，它们在改变大小之后产生的差异。
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/capture15.png)
+&emsp; &emsp;3.flex-shrink:与flex-grow定义相反。属性定义了项目的缩小比例。默认为1，即如果空间不足，该项目将缩小。
+&emsp; &emsp;4.flex-basis:属性定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间，它的默认值为auto，即项目的本来大小。我将第二个项目的flex-basis设置为了60px之后，第二个项目就横向变大了，我感觉这个属性和flex-grow及flex-shrink的区别便是它可以更细微的调整项目的大小。	
+![](http://xianggan.027cgb.com/622253/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/flex/Capture16.png)
+&emsp; &emsp;5.flex属性：flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值为 0 1 auto，后两个属性可选。该属性有两个快捷键：auto(1 1 auto) 和 none(0 0 auto).
+&emsp; &emsp;6.align-self：属性允许单个项目与其他项目不一样的对齐方式，可覆盖 align-items 属性。默认值为 auto，表示继承父元素 align-items 属性。如果没有父元素，则等同于stretch。
+
+57
+2020-03-16 12:33:03,206 [145] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:如何利用ggithub+hexo建立一个静态博客,添加的用户是:Tony,添加的分类Id为:5
+2020-03-16 12:34:49,706 [136] INFO  blog.Controllers.ManagementController [(null)] - 添加的文章名为:搭建静态博客,添加的用户是:Tony,添加的分类Id为:6
+2020-03-16 12:38:57,731 [124] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-16 12:38:57,742 [124] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-16 12:40:48,997 [24] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 12:40:49,009 [24] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 12:43:38,820 [49] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 12:43:38,838 [49] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 12:44:27,111 [41] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 12:44:27,120 [41] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 12:59:09,832 [81] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 12:59:09,840 [81] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 13:07:19,394 [16] INFO  blog.Controllers.UserController [(null)] - username=Tony,password=123
+2020-03-16 13:10:50,416 [12] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 13:10:50,495 [12] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-16 13:14:30,800 [31] INFO  blog.Controllers.UserController [(null)] - username=2,password=2
+2020-03-16 13:14:37,366 [16] INFO  blog.Controllers.UserController [(null)] - username=2,password=2
+2020-03-16 13:14:37,377 [16] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 2 密码验证正确
+2020-03-16 13:17:11,133 [23] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-16 13:17:11,142 [23] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确

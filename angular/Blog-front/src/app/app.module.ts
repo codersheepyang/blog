@@ -27,6 +27,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { AdvertisementAdminComponent } from './advertisement-admin/advertisement-admin.component';
 import { BlogRegisterComponent } from './blog-register/blog-register.component';
 import { PersonalMessageComponent } from './personal-message/personal-message.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { PersonalMessageComponent } from './personal-message/personal-message.co
     PhotosComponent,
     AdvertisementAdminComponent,
     BlogRegisterComponent,
-    PersonalMessageComponent
+    PersonalMessageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

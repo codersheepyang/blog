@@ -1,4 +1,4 @@
-<div style="width: 600px;">
+<div style="display: flex;">
     <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6" style="margin: 10px">
         <p>评论</p>
         <div style="display: flex;">
@@ -30,18 +30,18 @@
                 </div>
             </div>
         </div>
-        <div>
-            <mat-divider></mat-divider>
-            <p style="padding-top: 10px">
-                <b>{{ commentCounts }}</b>条评论
-            </p>
-            <div *ngIf="comments">
-                <div *ngFor="let item of comments">
-                    <p>
-                        <b>{{ item["commentName"] }}</b>说:{{ item["content"] }}
-                    </p>
-                </div>
+
+    </mat-card>
+    <mat-card class="sort_container mat-elevation-z6" style="width:865px;margin-top: 10px;">
+        <p style="padding-top: 10px">
+            <b>{{ commentCounts }}</b>条评论
+        </p>
+        <div *ngIf="comments">
+            <div *ngFor="let item of comments">
+                <p>
+                    <b>{{ item["commentName"] }}</b>说:{{ item["content"] }}
+                </p>
             </div>
         </div>
-    </mat-card>
+    </mat-card >
 </div>

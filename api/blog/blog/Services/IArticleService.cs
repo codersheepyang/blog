@@ -11,7 +11,11 @@ namespace blog.Services
 {
     public interface IArticleService
     {
-       
+        List<Dictionary<string, object>> GetArticlesByTagId(int tagId);
+        string GetAllClassfications();
+
+        string GetAllTags();
+
         string GetAllArticlesByUpdateTime(int userId);
 
         string GetAllArticlesByReadCounts(int userId);
