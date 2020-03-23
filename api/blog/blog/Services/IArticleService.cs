@@ -1,4 +1,5 @@
 ﻿using blog.inputs;
+using blog.Models;
 using blog.Models.Article;
 using blog.Models.Classification;
 using blog.Models.Comment;
@@ -40,7 +41,7 @@ namespace blog.Services
 
         AboutMe GetAboutMe();
 
-        void AddReply(Comment comment);
+        void AddReply(Reply reply);
 
 
 

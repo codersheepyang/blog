@@ -196,10 +196,26 @@ namespace blog.Services.Impl
             {
                 foreach (Comment comment in comments)
                 {
+
                     Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
                     keyValuePairs.Add("commentName", comment.CommentName);
                     keyValuePairs.Add("content", comment.Content);
+                    keyValuePairs.Add("commentId", comment.Id);
                     record.Add(keyValuePairs);
+                    List<Reply> replies = _replyContext.Reply.Where(r => r.CommentId == comment.Id).OrderBy(r => r.CreateTime).ToList();
+                    if (replies != null)
+                    {
+                        foreach (Reply reply in replies)
+                        {
+                            keyValuePairs = new Dictionary<string, object>();
+                            keyValuePairs.Add("commentName", reply.CommentName);
+                            keyValuePairs.Add("replyName", reply.ReplyName);
+                            keyValuePairs.Add("content", reply.Content);
+                            keyValuePairs.Add("commentId", comment.Id);
+                            record.Add(keyValuePairs);
+                        }
+                    }
+
                 }
                 string json = JsonConvert.SerializeObject(record);
                 return json;
@@ -299,16 +315,12 @@ namespace blog.Services.Impl
             return allArticlesMessage;
         }
 
-        public void AddReply(Comment comment)
+        public void AddReply(Reply reply)
         {
-            string commentName = _userContext.User.Where(u => u.ID == comment.UserId).FirstOrDefault()?.Name;
-            Reply reply = new Reply();
+            string commentName = _userContext.User.Where(u => u.ID == reply.UserId).FirstOrDefault()?.Name;
             reply.CommentName = commentName;
-            reply.Content = comment.Content;
             reply.CreateTime = DateTime.Now;
-            reply.ReplyName = comment.CommentName;
-            reply.UserId = comment.UserId;
-            reply.CommentId = comment.Id;
+            reply.ReplyName = reply.ReplyName;
             _replyContext.Reply.Add(reply);
             _replyContext.SaveChanges();
         }

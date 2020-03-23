@@ -17,6 +17,7 @@ export class CommentComponent implements OnInit {
   @Input() name:string;
   comment:Comment;
   commentTitle = "评论";
+  reply = null;
   constructor(private loginService : LoginService,private router : Router) { }
 
   ngOnInit() {
@@ -27,9 +28,10 @@ export class CommentComponent implements OnInit {
       }});
   }
 
-  addReply(comment:Comment)
+  addReply(comment:any)
   {
     this.commentTitle = '回复';
+    this.reply = comment;
     
   }
   addContent():void{
@@ -41,24 +43,37 @@ export class CommentComponent implements OnInit {
       this.router.navigateByUrl('/login');
       return;
     }
-    console.log("name:" + this.name + "email:" + this.email + "content:" + this.content);
     if(this.content == null || this.content == "" || this.content == undefined)
     {
       alert("内容不能为空哟~");
     }else if(this.content.length >= 20){
       alert("字数过多~");
     }else{
-      this.comment = {
-        ArticleId : this.commentId,
-        CommentName : this.name,
-        Content : this.content,
-        FirstComment : 1,
-        MailBox:this.email,
-        UserId:this.loginService.userId,
-        Status:'未读'
-      };
-      this.loginService.addComment(this.comment).subscribe();
+      if(this.commentTitle == '评论')
+      {
+        this.comment = {
+          ArticleId : this.commentId,
+          CommentName : this.name,
+          Content : this.content,
+          FirstComment : 1,
+          MailBox:this.email,
+          UserId:this.loginService.userId,
+          Status:'未读'
+        };
+        this.loginService.addComment(this.comment).subscribe();
+      }else
+      {
+        var obj = {
+          Content : this.content,
+          CommentId : this.reply['commentId'],
+          UserId : this.loginService.userId,
+          ReplyName : this.reply['commentName']
+        }
+        console.log("commentId",this.reply.commentId);
+        this.loginService.addReply(obj).subscribe();
+      }
       alert("感谢你，评论添加成功！");
+      }
     }
   }
-}
+

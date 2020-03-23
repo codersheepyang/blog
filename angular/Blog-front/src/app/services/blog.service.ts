@@ -42,6 +42,7 @@ export class LoginService {
   private browseNumberUrl = `${this.managementAddress}/browseNumbers`;
   private classificationUrl = `${this.managementAddress}/classification`;
   private commentUrl = `${this.articleAddress}/comment`;
+  private replyUrl = `${this.articleAddress}/reply`;
   private classificationsUrl = `${this.managementAddress}/classifications`;
   private hotArticleUrl = `${this.articleAddress}/articleByReadCounts`;
   private articlesByUpdateTimeUrl = `${this.articleAddress}/articleByUpdateTime`;
@@ -158,6 +159,9 @@ export class LoginService {
   }
 
  
+  addReply(reply:any): Observable<any> {
+    return this.http.post<any>(this.replyUrl, reply, { headers });
+  }
 
   addComment(comment: Comment): Observable<any> {
     return this.http.post<any>(this.commentUrl, comment, { headers });

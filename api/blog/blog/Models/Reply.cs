@@ -9,12 +9,12 @@ namespace blog.Models
     [Table("Reply")]
     public class Reply
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string CommentName { get; set; }
         public string Content { get; set; }
-        public int UserId { get; set; }
         public int CommentId { get; set; }
+        public int UserId { get;set; } 
         public string ReplyName { get; set; }
     }
 }

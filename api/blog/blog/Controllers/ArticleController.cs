@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using blog.inputs;
+using blog.Models;
 using blog.Models.Article;
 using blog.Models.Comment;
 using blog.Services;
@@ -130,9 +131,9 @@ namespace blog.Controllers
         }
 
         [HttpPost("Reply")]
-        public void AddReply(Comment comment)
+        public void AddReply(Reply reply)
         {
-
+            _articleService.AddReply(reply);
         }
     }
 }

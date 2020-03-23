@@ -2,16 +2,17 @@
     <mat-card _ngcontent-c13="" class="sort_container mat-elevation-z6" style="margin: 10px">
         <p>{{commentTitle}}</p>
         <div>
-  
+
             <div>
-                <div >
+                <div>
                     <mat-form-field>
                         <input [(ngModel)]="content" matInput placeholder="最多评论20字 - - " />
                         <mat-hint>请在这里输入回复信息</mat-hint>
                     </mat-form-field>
                 </div>
                 <div style="padding-top: 20px">
-                    <button routerLink="/article/{{commentId}}" (click)="addContent()" mat-button style="background:lightgray;padding-left: 5px">
+                    <button routerLink="/article/{{commentId}}" (click)="addContent()" mat-button
+                        style="background:lightgray;padding-left: 5px">
                         {{commentTitle}}
                     </button>
                 </div>
@@ -26,13 +27,23 @@
         <div *ngIf="comments">
             <div *ngFor="let item of comments">
                 <div style="display: flex;">
-                    <p>
-                        <b>{{ item["commentName"] }}</b>说:{{ item["content"] }}
-                    </p>
-                    <button  (click)="addReply(item) " mat-button style="background:rgb(255, 255, 255);padding-left: 5px;color:cadetblue;">回复</button>
+                    <div *ngIf="item['replyName'] ==  null;  then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <p>
+                            <b>{{ item['commentName'] }}</b>说:{{ item["content"] }}
+                        </p>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                        <p>
+                            <b>&nbsp;&nbsp;&nbsp;&nbsp;{{ item['commentName'] }}</b>&nbsp;&nbsp;回复&nbsp;&nbsp;{{item['replyName']}}:{{ item["content"] }}
+                        </p>
+                    </ng-template>
+                    
+                    <button (click)="addReply(item) " mat-button
+                        style="background:rgb(255, 255, 255);color:cadetblue;">回复</button>
                 </div>
 
             </div>
         </div>
-    </mat-card >
+    </mat-card>
 </div>
