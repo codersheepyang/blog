@@ -4,4 +4,6 @@ export interface Comment{
     Content:string;
     ArticleId:number;
     FirstComment:number;
+    UserId:number;
+    Status:string;
 }

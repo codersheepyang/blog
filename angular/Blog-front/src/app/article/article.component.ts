@@ -15,6 +15,7 @@ export class ArticleComponent implements OnInit {
   @Input() createTime = null;
   classificationId = null;
   classification = null;
+  id = null;
 
   conf = new EditorConfig();
   constructor(
@@ -24,11 +25,12 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getArticle();
+    this.id = +this.route.snapshot.paramMap.get("id");
+    this.getArticle(this.id);
   }
 
-     getArticle(){
-    const id = +this.route.snapshot.paramMap.get("id");
+     getArticle(id:number){
+    
     this.loginService.getArticle(id).subscribe(value => {
       this.article = value;
       this.conf.markdown = value['Content'];

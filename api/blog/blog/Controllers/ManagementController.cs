@@ -202,5 +202,11 @@ namespace blog.Controllers
         {
             return Ok(_managementService.GetTagByTagId(tagId));
         }
+
+        [HttpPut("comment")]
+        public void UpdateCommentStatus(Comment comment)
+        {
+            _managementService.UpdateCommentStatus(comment);
+        }
     }
 }

@@ -27,6 +27,8 @@ namespace blog.Services.Impl
 
         private readonly TagContext _tagContext;
 
+        private readonly ReplyContext _replyContext;
+
 
         private const string SHEMA = "bank_cookie";
 
@@ -34,13 +36,15 @@ namespace blog.Services.Impl
 
         public ArticleServiceImpl(ArticleContext articleContext, ClassificationContext classificationContext
                                    ,CommentContext commentContext,TagContext tagContext
-                                   ,UserContext userContext)
+                                   ,UserContext userContext
+                                   ,ReplyContext replyContext)
         {
             _articleContext = articleContext;
             _classificationContext = classificationContext;
             _commentContext = commentContext;
             _tagContext = tagContext;
             _userContext = userContext;
+            _replyContext = replyContext;
         }
 
         /// <summary>
@@ -55,8 +59,7 @@ namespace blog.Services.Impl
             {
                 return "添加评论的文章不存在";
             }
-            int userId = _articleContext.Article.Find(comment.ArticleId).UserId;
-            string name = _userContext.User.Find(userId).Name;
+            string name = _userContext.User.Find(comment.UserId).Name;
             if (name == null)
             {
                 comment.CommentName = "Anonymous";
@@ -294,6 +297,20 @@ namespace blog.Services.Impl
                 allArticlesMessage.Add(keyValuePairs);
             }
             return allArticlesMessage;
+        }
+
+        public void AddReply(Comment comment)
+        {
+            string commentName = _userContext.User.Where(u => u.ID == comment.UserId).FirstOrDefault()?.Name;
+            Reply reply = new Reply();
+            reply.CommentName = commentName;
+            reply.Content = comment.Content;
+            reply.CreateTime = DateTime.Now;
+            reply.ReplyName = comment.CommentName;
+            reply.UserId = comment.UserId;
+            reply.CommentId = comment.Id;
+            _replyContext.Reply.Add(reply);
+            _replyContext.SaveChanges();
         }
     }
 }

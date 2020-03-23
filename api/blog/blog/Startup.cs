@@ -60,6 +60,8 @@ namespace blog
             services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<AdvertisementContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<TagContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<ReplyContext>(options => options.UseSqlServer(connection));
+
 
             //DI
             services.AddTransient<IUserService, UserServiceImpl>();

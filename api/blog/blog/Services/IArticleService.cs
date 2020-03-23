@@ -40,7 +40,7 @@ namespace blog.Services
 
         AboutMe GetAboutMe();
 
-
+        void AddReply(Comment comment);
 
 
 

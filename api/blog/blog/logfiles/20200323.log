@@ -1,0 +1,50 @@
+2020-03-23 15:36:01,550 [23] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 15:36:01,667 [23] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 15:52:21,577 [7] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 15:52:22,200 [7] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 15:52:56,581 [7] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-23 15:52:56,590 [7] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-23 16:06:44,317 [31] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-23 16:06:44,325 [31] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-23 16:08:33,937 [70] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:08:33,947 [70] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:10:54,365 [67] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:10:54,373 [67] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:17:30,120 [9] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-23 16:17:30,719 [9] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-23 16:19:14,925 [9] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-23 16:19:14,936 [9] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-23 16:20:21,587 [25] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-23 16:20:21,596 [25] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-23 16:20:42,984 [46] INFO  blog.Controllers.UserController [(null)] - username=Gavin,password=123
+2020-03-23 16:20:47,290 [25] INFO  blog.Controllers.UserController [(null)] - username=Gavin,password=123
+2020-03-23 16:20:47,298 [25] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Gavin 密码验证正确
+2020-03-23 16:23:00,896 [40] INFO  blog.Controllers.UserController [(null)] - username=1,password=1
+2020-03-23 16:23:00,907 [40] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 1 密码验证正确
+2020-03-23 16:23:22,251 [25] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:23:22,260 [25] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:35:09,881 [12] INFO  blog.Controllers.UserController [(null)] - username=Gavin,password=123
+2020-03-23 16:35:10,437 [12] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Gavin 密码验证正确
+2020-03-23 16:35:23,585 [10] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:35:23,594 [10] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:35:54,789 [9] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:35:54,798 [9] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:38:15,486 [6] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:38:15,981 [6] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:44:55,446 [7] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:44:55,972 [7] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:45:14,018 [11] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:45:14,029 [11] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:48:15,201 [7] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:48:15,748 [7] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:48:54,999 [25] INFO  blog.Controllers.UserController [(null)] - username=Gavin,password=123
+2020-03-23 16:48:57,579 [7] INFO  blog.Controllers.UserController [(null)] - username=Gavin,password=123
+2020-03-23 16:48:57,586 [7] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Gavin 密码验证正确
+2020-03-23 16:49:46,698 [9] INFO  blog.Controllers.UserController [(null)] - username=Gavin,password=123
+2020-03-23 16:49:46,740 [9] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Gavin 密码验证正确
+2020-03-23 16:56:14,794 [43] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 16:56:14,798 [43] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确
+2020-03-23 16:56:40,460 [56] INFO  blog.Controllers.ManagementController [(null)] - 获取的文章Id是:5
+2020-03-23 16:56:40,531 [65] INFO  blog.Controllers.ManagementController [(null)] - 获取分类的Id是:3
+2020-03-23 17:34:47,987 [21] INFO  blog.Controllers.UserController [(null)] - username=Cookie,password=123
+2020-03-23 17:34:47,992 [21] INFO  blog.Services.Impl.UserServiceImpl [(null)] - 用户 Cookie 密码验证正确

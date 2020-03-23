@@ -34,13 +34,20 @@
                 </div>
                 <div>
                     <ul *ngFor="let item of comments">
-                        <p style="margin-top: 0px;margin-bottom: 0px;padding-bottom:21px;width:510px">
+                        <p style="margin-top: 0px;margin-bottom: 0px;padding-bottom:21px;width:400px">
                             <span style="color:#a9a9a9 ">作者:</span>{{item["commentName"]}}</p>
                         <!-- <span [articleId]="item['articleId']">{{articleId}}</span> -->
                     </ul>
                 </div>
                 <div>
-                    <ul *ngFor="let item of comments;" style="padding-left: 90px">
+                    <ul *ngFor="let item of comments;" style="padding-left: 120px">
+                        <p style="margin-top: 0px;margin-bottom: 0px;padding-bottom:21px;">
+                            <a routerLink="/commentAdmin"  style="text-decoration: none;" (click)="updateStatus(item)">{{item['status']}}</a>
+                        </p>
+                    </ul>
+                </div>
+                <div>
+                    <ul *ngFor="let item of comments;" style="padding-left:40 px">
                         <p style="margin-top: 0px;margin-bottom: 0px;padding-bottom:21px;">
                             <a routerLink="/commentAdmin"  style="text-decoration: none;" (click)="deleteComment(item)">删除</a>
                         </p>

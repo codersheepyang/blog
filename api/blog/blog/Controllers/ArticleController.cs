@@ -128,5 +128,11 @@ namespace blog.Controllers
             List<Dictionary<string, object>> result = _articleService.GetArticlesByTagId(tagId);
             return Ok(result);
         }
+
+        [HttpPost("Reply")]
+        public void AddReply(Comment comment)
+        {
+
+        }
     }
 }

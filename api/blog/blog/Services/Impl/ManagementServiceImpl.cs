@@ -231,6 +231,7 @@ namespace blog.Services.Impl
                         keyValuePairs.Add("articleName", current.ArticleName);
                         keyValuePairs.Add("commentName", comment.CommentName);
                         keyValuePairs.Add("content", comment.Content);
+                        keyValuePairs.Add("status", comment.Status);
                         allComments.Add(keyValuePairs);
                     }
                 }
@@ -332,6 +333,16 @@ namespace blog.Services.Impl
             }
             return "修改的分类不存在";
             
+        }
+
+        public void UpdateCommentStatus(Comment comment)
+        {
+           Comment com = _commentContext.Comment.Where(c => c.Id == comment.Id).FirstOrDefault();
+            if (com != null)
+            {
+                com.Status = "已读";
+            }
+            _commentContext.SaveChanges();
         }
 
         /// <summary>

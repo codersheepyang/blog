@@ -23,6 +23,7 @@ export class LoginService {
 
   public user = null;
   public userId;
+  public articleId;
   private commonAddress:string = 'https://localhost:44372/api';
   private articleAddress: string = `${this.commonAddress}/article`;
   private managementAddress: string = `${this.commonAddress}/management`;
@@ -51,6 +52,11 @@ export class LoginService {
 
   
   constructor(private http: HttpClient) { }
+
+  updateCommentStatus(comment:any):Observable<any>{
+    const url = `${this.managementAddress}/comment`;
+    return this.http.put(url,comment,{headers});
+  }
 
   getArticlesByTagId(tagId:Number):Observable<any>{
     const url = `${this.articlesByTagIdUrl}/${tagId}`;

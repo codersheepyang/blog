@@ -45,5 +45,7 @@ namespace blog.Services
 
         string GetPersonalMessage(int userId);
 
+        void UpdateCommentStatus(Comment comment);
+
     }
 }

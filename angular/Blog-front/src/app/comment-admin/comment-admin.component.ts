@@ -27,6 +27,10 @@ export class CommentAdminComponent implements OnInit {
     
   }
 
+  updateStatus(comment:any)
+  {
+    this.loginService.updateCommentStatus(comment).subscribe();
+  }
   deleteComment(comment:any){
     this.loginService.deleteComment(comment['id']).subscribe();
     alert("成功删除评论者 " + comment['commentName'] + " 对文章《" + comment['articleName'] + "》说的话:" + comment['content']);

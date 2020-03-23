@@ -16,6 +16,7 @@ export class CommentComponent implements OnInit {
   @Input() email:string;
   @Input() name:string;
   comment:Comment;
+  commentTitle = "评论";
   constructor(private loginService : LoginService,private router : Router) { }
 
   ngOnInit() {
@@ -24,6 +25,12 @@ export class CommentComponent implements OnInit {
       for(let i in value){
         this.commentCounts++;
       }});
+  }
+
+  addReply(comment:Comment)
+  {
+    this.commentTitle = '回复';
+    
   }
   addContent():void{
     if(this.loginService.userId == undefined)
@@ -46,7 +53,9 @@ export class CommentComponent implements OnInit {
         CommentName : this.name,
         Content : this.content,
         FirstComment : 1,
-        MailBox:this.email
+        MailBox:this.email,
+        UserId:this.loginService.userId,
+        Status:'未读'
       };
       this.loginService.addComment(this.comment).subscribe();
       alert("感谢你，评论添加成功！");
