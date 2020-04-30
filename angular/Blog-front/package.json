@@ -23,7 +23,7 @@
     "@angular/router": "~8.2.0",
     "@schematics/angular": "^8.2.2",
     "editor.md": "^1.5.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-bootstrap-modal": "^2.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
